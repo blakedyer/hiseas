@@ -35,13 +35,33 @@
   </div>
 </section>
 
-<section class="event-panel" aria-labelledby="events">
-  <p class="section-label">Events</p>
-  <h2 id="events">{{ page.events_title }}</h2>
-  <p>{{ page.events_intro }}</p>
-  <ul class="event-list">
+<section class="event-panel" aria-labelledby="events" data-reveal-group>
+  <div class="event-panel__intro" data-reveal-child>
+    <p class="section-label">Events</p>
+    <h2 id="events">{{ page.events_title }}</h2>
+    <p>{{ page.events_intro }}</p>
+  </div>
+  <ul class="event-list event-list--detailed">
     {% for event in page.events %}
-      <li>{{ event }}</li>
+      <li class="event-card event-card--{{ event.type | lower | replace(' ', '-') }}" data-reveal-child>
+        <span class="material-symbols-outlined event-card__icon" aria-hidden="true">{{ event.icon | default('event') }}</span>
+        <div class="event-card__body">
+          <div class="event-card__meta">
+            {% if event.datetime %}
+              <time datetime="{{ event.datetime }}">{{ event.date }}</time>
+            {% else %}
+              <span>{{ event.date }}</span>
+            {% endif %}
+            <span>{{ event.type }}</span>
+          </div>
+          <h3>{{ event.title }}</h3>
+          <p>{{ event.text }}</p>
+        </div>
+        <p class="event-card__place">
+          <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
+          {{ event.location }}
+        </p>
+      </li>
     {% endfor %}
   </ul>
 </section>

@@ -1,6 +1,6 @@
 # HISEAS Static Site
 
-Static rebuild of `hiseas.org`, generated from YAML data files and Jinja templates.
+Single-page static rebuild of `hiseas.org`, generated from YAML data files and Jinja templates.
 
 ## Production Target
 
@@ -32,15 +32,10 @@ Then deploy the generated `dist/` directory as before.
 
 - `data/site.yml`: global metadata, navigation, footer links.
 - `data/home.yml`: research homepage content.
-- `data/research_questions.yml`: NSF proposal questions, objectives, and hypotheses.
-- `data/research_pipeline.yml`: methods workflow, model stack, and glossary.
 - `data/field_cases.yml`: field atlas records, including the Cook Islands case.
-- `data/findings.yml`: manuscript-in-preparation summaries and figure atlas.
-- `data/field_notes.yml`: public field dispatches distilled from field notes.
 - `data/media.yml`: curated cinematic media, video posters, placeholders, and outreach clip metadata.
 - `data/publications.yml`: publication records.
 - `data/team.yml`: people grouped by role.
 - `data/outreach.yml`: outreach copy and events.
-- `data/collections.yml`: future sections for stories, photos, notes, and links.
 
-The generated HTML is written to `dist/`. Source content should be changed in `data/`, `templates/`, and `static/`.
+The generated site is currently `dist/index.html` plus static assets. Source content should be changed in `data/`, `templates/`, and `static/`.

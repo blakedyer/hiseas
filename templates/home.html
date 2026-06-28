@@ -226,6 +226,7 @@
         {% set approach_items = [
           {
             "label": "Paleoclimate",
+            "short_label": "Climate",
             "icon": "thermometer",
             "kicker": "140-115 ka proxy synthesis",
             "text": "Compile structured LIG paleoclimate records, fill targeted gaps with new SST, AMOC, sea-ice, iceberg-discharge, ecosystem, and precipitation-isotope data, then turn those observations into time-slice maps that can score model simulations.",
@@ -237,6 +238,7 @@
           },
           {
             "label": "Sea Level",
+            "short_label": "Sea level",
             "icon": "waves",
             "kicker": "Field observations and fingerprints",
             "text": "Use WALIS records plus new surveyed and dated fossil-coral sites to turn local shoreline indicators into melt constraints. GIA modeling, sea-level fingerprints, emulators, and Bayesian inversion estimate when and where excess LIG ice volume was lost.",
@@ -248,6 +250,7 @@
           },
           {
             "label": "Ice sheet and Earth System modeling",
+            "short_label": "Models",
             "icon": "hub",
             "kicker": "CLIMBER-X, PISM, VILMA",
             "text": "Run probabilistic coupled simulations that link CLIMBER-X climate, PISM ice sheets, VILMA solid-Earth and sea-level response, and observation scoring. Ensembles test which ice histories survive paleoclimate and sea-level constraints.",
@@ -265,6 +268,7 @@
           role="tab"
           aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
           aria-controls="approach-visual"
+          aria-label="{{ item.label }}: {{ item.text }}"
           data-tab-image="{{ item.image | image_url }}"
           data-tab-caption="{{ item.caption }}"
           data-tab-source="{{ item.source }}"
@@ -286,6 +290,7 @@
           <span class="initiative-button__body">
             <span class="initiative-button__kicker">{{ item.kicker }}</span>
             <span class="initiative-button__title">{{ item.label }}</span>
+            <span class="initiative-button__short" aria-hidden="true">{{ item.short_label }}</span>
             <span class="initiative-button__text">{{ item.text }}</span>
           </span>
         </button>
@@ -347,7 +352,6 @@
               <span>{{ site.status }}</span>
               <h3>{% if loop.index == 1 %}O'ahu and Moloka'i{% elif loop.index == 4 %}Aruba and Curacao{% else %}{{ site.name }}{% endif %}</h3>
               <p>{{ site.summary }}</p>
-              <a href="{{ '/field-sites/' | with_base_path }}">Read more</a>
             </div>
           </article>
         {% endfor %}
@@ -369,48 +373,93 @@
   </div>
 </section>
 
-<section class="landing-section landing-section--wip outreach-chapter outreach-chapter--rich" id="outreach" data-chapter aria-labelledby="outreach-heading">
-  <div class="outreach-chapter__copy" data-reveal="text">
-    <p class="section-label">Outreach</p>
-    <h2 id="outreach-heading">The field campaign is also a public conversation.</h2>
-    <p>{{ media.outreach.text }} HISEAS links public coverage, local field context, and broader-impact work directly into the research story.</p>
-    <div class="coverage-links">
-      {% for item in media.outreach.links %}
-        <a href="{{ item.href }}">
-          <span>{{ item.title }}</span>
-          {{ item.text }}
-        </a>
-      {% endfor %}
+<section class="landing-section outreach-chapter outreach-chapter--rich" id="outreach" data-chapter aria-labelledby="outreach-heading">
+  <div class="outreach-scene">
+    <div class="outreach-chapter__copy" data-reveal="text">
+      <p class="section-label">Outreach</p>
+      <h2 id="outreach-heading">From sea-level science to community conversations.</h2>
+      <p>Cook Islands school visits and local reporting connect raised-reef fieldwork with students, educators, and public discussion of coastal change.</p>
     </div>
-  </div>
-  <div class="outreach-media-stack" data-reveal="media" data-reveal-group>
-    <figure class="media-frame" data-reveal-child>
-      <video controls playsinline poster="{{ media.outreach.still | image_url }}">
-        <source src="{{ media.outreach.video }}" type="video/mp4">
-      </video>
-      <figcaption><span class="status-pill">Media coverage</span>{{ media.outreach.title }}</figcaption>
-    </figure>
-    <img src="{{ media.outreach.community | image_url }}" alt="Community presentation image from Cook Islands media coverage." data-reveal-child>
+
+    <div class="outreach-media-stack" data-reveal="media" data-reveal-group>
+      <figure class="outreach-carousel" data-outreach-carousel data-reveal-child>
+        <div class="outreach-carousel__slides">
+          {% for visit in media.outreach.school_visits %}
+            <img
+              src="{{ visit.image | image_url }}"
+              alt="{{ visit.alt }}"
+              class="outreach-carousel__slide{% if loop.first %} is-active{% endif %}"
+              loading="{% if loop.first %}eager{% else %}lazy{% endif %}"
+            >
+          {% endfor %}
+        </div>
+        <figcaption>
+          <span>Cook Islands</span>
+          Sharing sea-level science with local students and communities.
+        </figcaption>
+        <div class="outreach-carousel__dots" aria-label="School visit images">
+          {% for visit in media.outreach.school_visits %}
+            <button type="button" aria-label="Show school visit image {{ loop.index }}" aria-pressed="{{ 'true' if loop.first else 'false' }}"></button>
+          {% endfor %}
+        </div>
+      </figure>
+
+      <div class="outreach-lower-grid">
+        <article class="outreach-coverage" id="outreach-coverage" data-reveal-child>
+          <div class="outreach-coverage__copy">
+            <p class="section-label">In the news</p>
+            <h3>Recent coverage</h3>
+            <p>HISEAS science and community partnerships featured in Cook Islands and Pacific media.</p>
+          </div>
+          <video controls preload="metadata" playsinline poster="{{ media.outreach.still | image_url }}">
+            <source src="{{ media.outreach.video }}" type="video/mp4">
+          </video>
+          <div class="coverage-links" aria-label="Cook Islands outreach links">
+            {% for item in media.outreach.links %}
+              <a class="coverage-link coverage-link--{{ item.variant }}" href="{{ item.href }}" aria-label="{{ item.title }}: {{ item.text }}">
+                <span class="coverage-link__mark" aria-hidden="true">
+                  <span class="material-symbols-outlined">{{ item.icon }}</span>
+                </span>
+                <span class="coverage-link__copy">
+                  <span class="coverage-link__source">{{ item.label }}</span>
+                  <span class="coverage-link__title">{{ item.title }}</span>
+                </span>
+              </a>
+            {% endfor %}
+          </div>
+        </article>
+
+        <aside class="outreach-events" data-reveal-child aria-label="Upcoming events">
+          <p class="section-label">Upcoming events</p>
+          <ul>
+            {% for event in outreach.events %}
+              <li>
+                <span class="material-symbols-outlined outreach-event__icon" aria-hidden="true">{{ event.icon | default('event') }}</span>
+                <span class="outreach-event__body">
+                  <span class="outreach-event__meta">
+                    <span>{{ event.type }}</span>
+                    {% if event.datetime %}
+                      <time datetime="{{ event.datetime }}">{{ event.date }}</time>
+                    {% else %}
+                      <span>{{ event.date }}</span>
+                    {% endif %}
+                  </span>
+                  <span class="outreach-event__title">{{ event.title }}</span>
+                </span>
+              </li>
+            {% endfor %}
+          </ul>
+        </aside>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="landing-section landing-section--wip publications-section" id="publications" data-chapter aria-labelledby="publications-heading">
-  <div class="section-shell publications-grid">
-    <div data-reveal="text">
-      <p class="section-label">Publications</p>
-      <h2 id="publications-heading">Published work and emerging HISEAS outputs.</h2>
-      <p>For now, the landing page surfaces the essential paper trail. Dedicated publication pages can return when the archive is large enough to need them.</p>
-    </div>
-    <div class="publication-list" data-reveal="card" data-reveal-group>
-      {% for item in publications["items"] %}
-        <article data-reveal-child>
-          <span>{{ item.year }}</span>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.authors }}</p>
-          <a class="text-link" href="{{ item.doi }}">Read DOI</a>
-        </article>
-      {% endfor %}
-    </div>
-  </div>
+<section class="landing-section publications-section" id="publications" data-chapter aria-labelledby="publications-heading">
+  {% set publication_data = publications %}
+  {% set publication_heading_id = "publications-heading" %}
+  {% set publication_heading = "Publications" %}
+  {% set publication_intro = "Peer-reviewed research advancing understanding of sea level, ice sheets, and Earth-system change." %}
+  {% include "_publication_showcase.html" %}
 </section>
 {% endblock %}

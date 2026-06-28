@@ -7,6 +7,9 @@
     <meta name="description" content="{{ page.dek | default(page.intro if page.intro is string else site.description) }}">
     <link rel="canonical" href="{{ site.url }}{% if page.slug != 'index' %}/{{ page.slug }}/{% else %}/{% endif %}">
     <link rel="icon" href="{{ '/favicon.svg' | image_url }}" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400..700,0..1,-25..200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | with_base_path }}">
     <script src="{{ '/assets/js/site.js' | with_base_path }}" defer></script>
   </head>
@@ -20,7 +23,10 @@
           <span class="wordmark__sub">Frontier Research in Earth Sciences</span>
         </span>
       </a>
-      <nav class="site-nav" aria-label="Primary navigation">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation" data-nav-toggle>
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
+      <nav class="site-nav" id="primary-nav" aria-label="Primary navigation" data-site-nav>
         {% for item in site.navigation %}
           <a href="{{ item.href }}" {% if item.href == '/' and page.slug == 'index' or item.href == '/' ~ page.slug ~ '/' %}aria-current="page"{% endif %}>{{ item.label }}</a>
         {% endfor %}

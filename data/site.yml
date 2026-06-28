@@ -16,15 +16,6 @@ navigation:
     href: /#outreach
   - label: Publications
     href: /#publications
-future_navigation:
-  - label: Stories
-    href: /stories/
-  - label: Photos
-    href: /photos/
-  - label: Conference Notes
-    href: /notes/
-  - label: Links
-    href: /links/
 footer_links:
   - label: National Science Foundation
     href: https://www.nsf.gov/

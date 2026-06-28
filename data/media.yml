@@ -107,16 +107,37 @@ team_spotlight:
       affiliation: University of Florida
       image: /assets/images/current-site/08-997266_ef195d9e87084f4187d9bdfb06d2910c~mv2.jpg
 outreach:
-  video: /assets/media/cook-islands-news-reel.mp4
+  video: /assets/media/facebook_reel_943588045390018-full.mp4
   poster: /assets/images/cinema/cook-islands-news-reel.jpg
   title: Cook Islands Television News, June 9, 2026
   text: Mangaia TV covered the HISEAS field team studying sea-level history in makatea and limestone terraces.
   still: /assets/images/outreach/coverage-1.jpg
   community: /assets/images/outreach/coverage-2.jpg
+  school_visits:
+    - image: /assets/images/outreach/school-visits/cook-islands-school-visit-04.jpg
+      alt: HISEAS field team member speaking with Cook Islands students seated in a classroom circle.
+    - image: /assets/images/outreach/school-visits/cook-islands-school-visit-02.jpg
+      alt: Cook Islands student and HISEAS field team member discussing a board drawing during a school visit.
+    - image: /assets/images/outreach/school-visits/cook-islands-school-visit-03.jpg
+      alt: HISEAS field team sharing sea-level science with Cook Islands students and community members.
+    - image: /assets/images/outreach/school-visits/cook-islands-school-visit-01.jpg
+      alt: Cook Islands student and HISEAS field team member working with a periodic table during a classroom visit.
   links:
-    - title: CITV Local News segment
+    - title: CITV Local News
+      variant: citv
+      icon: smart_display
+      label: Video segment
       href: https://www.facebook.com/watch/?v=943588045390018
       text: A local television segment follows the team studying makatea and limestone terraces in the Southern Cook Islands.
-    - title: Researchers study makatea to predict future sea level rise
+    - title: Cook Islands News
+      variant: cook-news
+      icon: newspaper
+      label: Local newspaper
       href: https://www.cookislandsnews.com/internal/national/environment/outer-islands/researchers-study-makatea-to-predict-future-sea-level-rise/
       text: Cook Islands News coverage connects the HISEAS field campaign with public discussion of sea-level change and community context.
+    - title: RNZ Pacific
+      variant: rnz
+      icon: article
+      label: NZ article
+      href: https://www.rnz.co.nz/news/pacific/597654/researchers-study-cook-islands-geological-history-to-predict-future-sea-level-rise
+      text: RNZ Pacific reports on the field campaign and how Cook Islands geological history can inform future sea-level projections.

@@ -59,15 +59,8 @@ def load_yaml(name: str) -> dict[str, Any]:
         return prefix_paths(yaml.safe_load(handle) or {})
 
 
-def page_path(slug: str) -> Path:
-    if slug == "index":
-        return OUT_DIR / "index.html"
-    return OUT_DIR / slug / "index.html"
-
-
 def render_page(env: Environment, template: str, site: dict[str, Any], page: dict[str, Any], **context: Any) -> None:
-    target = page_path(page["slug"])
-    target.parent.mkdir(parents=True, exist_ok=True)
+    target = OUT_DIR / "index.html"
     html = env.get_template(template).render(site=site, page=page, **context)
     target.write_text(html, encoding="utf-8")
 
@@ -98,12 +91,7 @@ def main() -> None:
     publications = load_yaml("publications.yml")
     team = load_yaml("team.yml")
     field_sites = load_yaml("field_cases.yml")
-    questions = load_yaml("research_questions.yml")
-    methods = load_yaml("research_pipeline.yml")
-    findings = load_yaml("findings.yml")
-    field_notes = load_yaml("field_notes.yml")
     outreach = load_yaml("outreach.yml")
-    collections = load_yaml("collections.yml")
     env.globals["media"] = media
     env.globals["base_path"] = BASE_PATH
 
@@ -112,35 +100,11 @@ def main() -> None:
         "home.html",
         site,
         home,
-        collections=collections["collections"],
-        questions=questions,
-        methods=methods,
-        findings=findings,
         field_sites=field_sites,
-        field_notes=field_notes,
         publications=publications,
         team=team,
+        outreach=outreach,
     )
-    render_page(env, "methods.html", site, methods)
-    render_page(env, "findings.html", site, findings)
-    render_page(env, "field_notes.html", site, field_notes)
-    render_page(env, "publications.html", site, publications)
-    render_page(env, "team.html", site, team)
-    render_page(env, "field_sites.html", site, field_sites)
-    render_page(env, "outreach.html", site, outreach)
-
-    for item in collections["collections"]:
-        render_page(
-            env,
-            "future_collection.html",
-            site,
-            {
-                "slug": item["slug"],
-                "title": item["title"],
-                "intro": item["text"],
-                "status": item["status"],
-            },
-        )
 
 
 if __name__ == "__main__":

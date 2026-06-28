@@ -7,7 +7,28 @@ body:
 events_title: Public Engagement Events
 events_intro: The HISEAS team strives to bolster public engagement with our research through outreach events. Everyone is encouraged to attend.
 events:
-  - Lamont-Doherty Earth Observatory (LDEO) Open House
-  - Exhibits at the American Museum of Natural History
-  - Collaborations with the Florida Museum of Natural History
-  - Science for Alaska lecture series
+  - title: Lamont-Doherty Earth Observatory (LDEO) Open House
+    type: Open House
+    date: "Oct 17, 2026"
+    datetime: "2026-10-17"
+    location: Palisades, New York
+    icon: event
+    text: Hands-on public programming at LDEO connecting HISEAS field science with broader Earth science.
+  - title: Exhibits at the American Museum of Natural History
+    type: Museum
+    date: Upcoming
+    location: New York, New York
+    icon: account_balance
+    text: Museum exhibits that connect sea-level change, paleoclimate archives, and public science education.
+  - title: Collaborations with the Florida Museum of Natural History
+    type: Museum
+    date: Upcoming
+    location: Gainesville, Florida
+    icon: account_balance
+    text: Museum collaboration supporting research translation, collections context, and public learning.
+  - title: Science for Alaska lecture series
+    type: Lecture
+    date: Upcoming
+    location: Alaska public science series
+    icon: campaign
+    text: Public lecture format connecting Last Interglacial sea-level science to communities tracking environmental change.

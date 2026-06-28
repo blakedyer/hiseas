@@ -1,8 +1,15 @@
 document.documentElement.classList.add("js");
 
 const easeOutMotion = progress => 1 - Math.pow(1 - progress, 3);
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const prefersReducedMotion = () => reducedMotionQuery.matches;
 
 const animateFrame = (duration, render) => {
+  if (duration <= 0 || prefersReducedMotion()) {
+    render(1, 1);
+    return () => {};
+  }
+
   const start = window.performance.now();
   let frame = null;
   let stopped = false;
@@ -66,13 +73,81 @@ const scrollToHashTarget = () => {
   const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
   if (!target) return;
   const header = document.querySelector(".site-header");
-  const headerOffset = header ? header.getBoundingClientRect().height + 24 : 0;
+  const headerOffset = header ? header.getBoundingClientRect().top + 4 : 0;
   const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset;
   window.scrollTo({ top: Math.max(0, targetTop) });
+
+  const arrivalScope = target.closest("[data-chapter]") || target;
+  arrivalScope.querySelectorAll("[data-reveal], [data-reveal-group]").forEach(item => {
+    item.classList.add("is-visible");
+  });
+  if (arrivalScope.matches("[data-reveal], [data-reveal-group]")) {
+    arrivalScope.classList.add("is-visible");
+  }
 };
 
+let closeSiteNav = () => {};
+const siteHeader = document.querySelector(".site-header");
+const navToggle = document.querySelector("[data-nav-toggle]");
+const siteNav = document.querySelector("[data-site-nav]");
+
+if (siteHeader && navToggle && siteNav) {
+  const navIcon = navToggle.querySelector(".material-symbols-outlined");
+  const desktopQuery = window.matchMedia("(min-width: 981px)");
+
+  const syncNavA11y = open => {
+    const hidden = !desktopQuery.matches && !open;
+    siteNav.toggleAttribute("inert", hidden);
+    siteNav.setAttribute("aria-hidden", hidden ? "true" : "false");
+  };
+
+  const setNavOpen = open => {
+    siteHeader.classList.toggle("is-nav-open", open);
+    navToggle.setAttribute("aria-expanded", String(open));
+    navToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+    if (navIcon) navIcon.textContent = open ? "close" : "menu";
+    syncNavA11y(open);
+  };
+
+  closeSiteNav = () => setNavOpen(false);
+
+  navToggle.addEventListener("click", () => {
+    setNavOpen(!siteHeader.classList.contains("is-nav-open"));
+  });
+
+  siteNav.addEventListener("click", event => {
+    if (event.target.closest("a")) closeSiteNav();
+  });
+
+  document.addEventListener("click", event => {
+    if (!siteHeader.contains(event.target)) closeSiteNav();
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeSiteNav();
+  });
+
+  const resetDesktopNav = () => {
+    setNavOpen(desktopQuery.matches ? false : siteHeader.classList.contains("is-nav-open"));
+  };
+
+  if (desktopQuery.addEventListener) {
+    desktopQuery.addEventListener("change", resetDesktopNav);
+  } else {
+    desktopQuery.addListener(resetDesktopNav);
+  }
+
+  resetDesktopNav();
+}
+
 window.addEventListener("DOMContentLoaded", () => window.setTimeout(scrollToHashTarget, 80));
-window.addEventListener("load", () => window.setTimeout(scrollToHashTarget, 160));
+window.addEventListener("load", () => {
+  [160, 520, 1100].forEach(delay => window.setTimeout(scrollToHashTarget, delay));
+});
+window.addEventListener("hashchange", () => {
+  closeSiteNav();
+  [0, 220, 620].forEach(delay => window.setTimeout(scrollToHashTarget, delay));
+});
 
 const revealItems = [...document.querySelectorAll("[data-reveal]")];
 const revealGroups = [...document.querySelectorAll("[data-reveal-group]")];
@@ -146,7 +221,9 @@ headerLinks.forEach(link => {
     if (url.pathname !== window.location.pathname || !url.hash) return;
     event.preventDefault();
     history.pushState(null, "", url.hash);
+    closeSiteNav();
     scrollToHashTarget();
+    window.setTimeout(scrollToHashTarget, 360);
   });
 });
 
@@ -179,6 +256,56 @@ if (sections.length && (chapterLinks.length || headerLinks.length) && "Intersect
   sections.forEach(section => chapterObserver.observe(section));
 }
 
+document.querySelectorAll("[data-outreach-carousel]").forEach(carousel => {
+  const slides = [...carousel.querySelectorAll(".outreach-carousel__slide")];
+  const buttons = [...carousel.querySelectorAll(".outreach-carousel__dots button")];
+  if (slides.length < 2 || buttons.length !== slides.length) return;
+
+  let activeIndex = Math.max(0, slides.findIndex(slide => slide.classList.contains("is-active")));
+  let timer = null;
+
+  const setActiveSlide = index => {
+    activeIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      slide.classList.toggle("is-active", slideIndex === activeIndex);
+    });
+    buttons.forEach((button, buttonIndex) => {
+      button.setAttribute("aria-pressed", String(buttonIndex === activeIndex));
+    });
+  };
+
+  const stopTimer = () => {
+    window.clearInterval(timer);
+    timer = null;
+  };
+
+  const startTimer = () => {
+    if (timer || prefersReducedMotion()) return;
+    timer = window.setInterval(() => setActiveSlide(activeIndex + 1), 4600);
+  };
+
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      setActiveSlide(index);
+      stopTimer();
+      startTimer();
+    });
+  });
+
+  observeMotionInView(carousel, {
+    onEnter: startTimer,
+    onExit: stopTimer,
+    threshold: 0.28,
+  });
+
+  carousel.addEventListener("mouseenter", stopTimer);
+  carousel.addEventListener("mouseleave", startTimer);
+  carousel.addEventListener("focusin", stopTimer);
+  carousel.addEventListener("focusout", event => {
+    if (!carousel.contains(event.relatedTarget)) startTimer();
+  });
+});
+
 const heroVideo = document.querySelector("[data-video-loop]");
 
 if (heroVideo) {
@@ -197,7 +324,7 @@ if (heroVideo) {
   let visibleVideo = heroVideo;
   let hiddenVideo = standbyVideo || heroVideo;
   let activeVideo = 0;
-  let userPaused = false;
+  let userPaused = prefersReducedMotion();
   let transitionStarted = false;
   let finished = false;
   let openingHoldComplete = false;
@@ -637,7 +764,6 @@ document.querySelectorAll("[data-climate-story]").forEach(section => {
   const context = canvas.getContext("2d");
   if (!context) return;
 
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let activeId = section.dataset.climateActive || "ice-core";
   let activeProgress = 1;
   let animationToken = 0;
@@ -898,11 +1024,6 @@ document.querySelectorAll("[data-climate-story]").forEach(section => {
     const startedAt = window.performance.now();
     const nextId = nextStoryId(activeId);
 
-    if (reducedMotion.matches) {
-      setGateProgress(activeId, "0");
-      return;
-    }
-
     const renderGate = now => {
       if (token !== gateToken || !storyInView) return;
       const progress = clamp((now - startedAt) / gateDuration, 0, 1);
@@ -941,7 +1062,7 @@ document.querySelectorAll("[data-climate-story]").forEach(section => {
     });
     renderLegend(story);
 
-    if (reducedMotion.matches || !animate) {
+    if (!animate) {
       activeProgress = 1;
       syncText(story, activeProgress);
       drawClimateStory(story, activeProgress);
@@ -1002,7 +1123,7 @@ document.querySelectorAll("[data-climate-story]").forEach(section => {
   const startStory = () => {
     if (!dataReady || !storyInView || storyStarted) return;
     storyStarted = true;
-    setActive(activeId, !reducedMotion.matches, true);
+    setActive(activeId, true, true);
   };
 
   loadMaunaLoaMonthly().finally(() => {
@@ -1086,8 +1207,14 @@ document.querySelectorAll("[data-field-showcase]").forEach(showcase => {
     const clone = card.cloneNode(true);
     clone.id = `${card.id || "field-area"}-loop-${index + 1}`;
     clone.dataset.fieldClone = "";
+    clone.setAttribute("aria-hidden", "true");
+    clone.setAttribute("inert", "");
+    clone.removeAttribute("aria-label");
     clone.removeAttribute("data-reveal-child");
     clone.querySelectorAll("[id]").forEach(node => node.removeAttribute("id"));
+    clone.querySelectorAll("img").forEach(image => {
+      image.alt = "";
+    });
     track.append(clone);
     return clone;
   });
@@ -1144,7 +1271,7 @@ document.querySelectorAll("[data-field-showcase]").forEach(showcase => {
   };
 
   const startAutoAdvance = () => {
-    if (timer || !isShowcaseVisible || !next) return;
+    if (timer || !isShowcaseVisible || !next || prefersReducedMotion()) return;
     showcase.classList.add("is-cycling");
     next.classList.remove("is-advancing");
     next.offsetHeight;
@@ -1248,9 +1375,10 @@ document.querySelectorAll("[data-field-showcase]").forEach(showcase => {
     cards.forEach((card, cardIndex) => {
       const isActive = cardIndex === railIndex;
       const isLeaving = cardIndex >= leavingFrom && cardIndex < leavingTo;
+      const isBefore = !deferBefore && cardIndex < railIndex;
       card.classList.toggle("is-active", isActive);
       card.classList.toggle("is-leaving", isLeaving);
-      card.classList.toggle("is-before", !deferBefore && cardIndex < railIndex);
+      card.classList.toggle("is-before", isBefore);
 
       card._fieldExitAnimation?.cancel();
       card._fieldExitAnimation = null;
@@ -1263,6 +1391,10 @@ document.querySelectorAll("[data-field-showcase]").forEach(showcase => {
         card.style.transition =
           "border-color 480ms var(--ease-out), box-shadow 480ms var(--ease-out), transform 620ms var(--ease-out)";
         card.style.filter = "opacity(1)";
+      } else if (cardIndex < railIndex) {
+        card.style.filter = "opacity(0)";
+        card.style.opacity = "";
+        card.style.transition = "";
       } else {
         card.style.filter = "";
         card.style.opacity = "";
@@ -1367,6 +1499,8 @@ document.querySelectorAll("[data-field-showcase]").forEach(showcase => {
   showcase.addEventListener("focusout", event => {
     if (!showcase.contains(event.relatedTarget)) startAutoAdvance();
   });
+  showcase.addEventListener("mouseenter", stopAutoAdvance);
+  showcase.addEventListener("mouseleave", startAutoAdvance);
 
   selectField(active, { animate: false });
   updateTrackPosition();

@@ -1,0 +1,69 @@
+{% set publication_items = publication_data["items"] %}
+{% if publication_items %}
+  {% set featured_publication = publication_items[0] %}
+  <div class="section-shell publication-showcase" data-reveal="text">
+    {% if publication_show_intro | default(true) %}
+      <div class="publication-showcase__intro">
+        {% if publication_label is defined %}
+          <p class="section-label">{{ publication_label }}</p>
+        {% endif %}
+        <h2 id="{{ publication_heading_id }}">{{ publication_heading | default("Peer-reviewed HISEAS output.") }}</h2>
+        <p>{{ publication_intro | default(publication_data.intro) }}</p>
+      </div>
+    {% endif %}
+
+    <article class="publication-feature" data-reveal="media">
+      <figure class="publication-feature__media">
+        <img src="{{ featured_publication.image | image_url }}" alt="{{ featured_publication.image_alt }}" loading="lazy">
+        {% if featured_publication.image_caption %}
+          <figcaption>{{ featured_publication.image_caption }}</figcaption>
+        {% endif %}
+      </figure>
+      <div class="publication-feature__body">
+        <h3>{{ featured_publication.title }}</h3>
+        <p class="publication-feature__summary">{{ featured_publication.summary }}</p>
+        <p class="publication-citation">
+          <span>{{ featured_publication.authors }}</span>
+          <em>{{ featured_publication.journal }}</em>, {{ featured_publication.volume }} ({{ featured_publication.year }}).
+        </p>
+
+        <div class="publication-actions">
+          <a class="publication-link" href="{{ featured_publication.doi }}" aria-label="View publication DOI for {{ featured_publication.title }}">
+            <span>View publication</span>
+            <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+          </a>
+          {% if featured_publication.pdf %}
+            <a class="publication-link publication-link--quiet" href="{{ featured_publication.pdf | with_base_path }}" download aria-label="Download open access PDF for {{ featured_publication.title }}">
+              <span>Download PDF</span>
+              <span class="material-symbols-outlined" aria-hidden="true">download</span>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+
+    <div class="publication-archive" aria-label="Publication archive">
+      <h3>More peer-reviewed publications</h3>
+      {% if publication_items | length > 1 %}
+        <div class="publication-card-grid">
+          {% for item in publication_items %}
+            {% if not loop.first %}
+              <article class="publication-card">
+                <p class="publication-status">{{ item.status }}</p>
+                <h4>{{ item.title }}</h4>
+                <p>{{ item.authors }}</p>
+                <p><em>{{ item.journal }}</em> ({{ item.year }})</p>
+                <a class="publication-link publication-link--quiet" href="{{ item.doi }}" aria-label="View publication DOI for {{ item.title }}">
+                  <span>View publication</span>
+                  <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+                </a>
+              </article>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="publication-empty">Future publications will be added here.</p>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

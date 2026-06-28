@@ -7,21 +7,13 @@
   <p class="dek">{{ page.intro }}</p>
 </section>
 
-<section class="publication-list" aria-label="Publications">
-  {% for item in page["items"] %}
-    <article class="publication">
-      <div class="publication__meta">
-        <span>{{ item.year }}</span>
-        <span>{{ item.journal }}</span>
-      </div>
-      <div>
-        <h2>{{ item.title }}</h2>
-        <p class="authors">{{ item.authors }}</p>
-        <p>{{ item.volume }}. {{ item.issn }}.</p>
-        <p class="prose">{{ item.summary }}</p>
-        <a class="text-link" href="{{ item.doi }}">DOI: {{ item.doi }}</a>
-      </div>
-    </article>
-  {% endfor %}
+<section class="publication-page-section" aria-label="Publications">
+  {% set publication_data = page %}
+  {% set publication_label = "Publication archive" %}
+  {% set publication_heading_id = "publication-catalog-heading" %}
+  {% set publication_heading = "Published records." %}
+  {% set publication_intro = "Peer-reviewed project outputs, with enough citation detail for scientists and enough context for visitors entering from the public site." %}
+  {% set publication_show_intro = false %}
+  {% include "_publication_showcase.html" %}
 </section>
 {% endblock %}

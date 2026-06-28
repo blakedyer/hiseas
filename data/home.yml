@@ -28,25 +28,3 @@ research_tracks:
 synthesis:
   title: Testing why Last Interglacial ice sheets evolved.
   text: A sea-level fingerprint analysis will complement Earth system modeling to provide a parallel estimate of melt contributions during the LIG. Using data-calibrated models, HISEAS will test the relative roles of external drivers, boundary conditions, and internal ice-sheet processes in the evolution of LIG ice sheets.
-feature_links:
-  - title: Methods
-    href: /methods/
-    text: Follow the evidence-to-model workflow from field observations through sea-level fingerprints.
-  - title: Field Sites
-    href: /field-sites/
-    text: Follow Hawai'i, San Andres, the Cook Islands, and proposed Caribbean field campaigns.
-  - title: Findings
-    href: /findings/
-    text: Review manuscript-in-preparation figures and cautious working-result summaries.
-  - title: Field Notes
-    href: /field-notes/
-    text: Read field dispatches distilled from structured notes and sample context.
-  - title: Publications
-    href: /publications/
-    text: Read project publications and emerging results.
-  - title: Team
-    href: /team/
-    text: Meet the investigators, collaborators, researchers, postdocs, and students.
-  - title: Outreach
-    href: /outreach/
-    text: Learn how the project connects field science with public engagement.
