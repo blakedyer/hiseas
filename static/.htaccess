@@ -1,0 +1,21 @@
+DirectoryIndex index.html
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
+  RewriteRule ^(.+[^/])$ $1/ [R=301,L]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 hour"
+  ExpiresByType application/javascript "access plus 1 hour"
+  ExpiresByType image/svg+xml "access plus 1 week"
+  ExpiresByType image/png "access plus 1 week"
+  ExpiresByType image/jpeg "access plus 1 week"
+  ExpiresByType video/mp4 "access plus 1 week"
+</IfModule>

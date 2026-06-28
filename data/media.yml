@@ -1,0 +1,122 @@
+hero:
+  video: /assets/media/hero/hero-01-20260601-223350.mp4
+  videos:
+    - src: /assets/media/hero/hero-01-20260601-223350.mp4
+      label: 2026-06-01T22:33:50, 8-13 seconds
+    - src: /assets/media/hero/hero-04-20260604-221437.mp4
+      label: 2026-06-04T22:14:37, 4-7.5 seconds
+    - src: /assets/media/hero/hero-05-20260609-231601.mp4
+      label: 2026-06-09T23:16:01, 19.5-23 seconds
+    - src: /assets/media/hero/hero-03-20260601-230232.mp4
+      label: 2026-06-01T23:02:32, 12-17 seconds
+    - src: /assets/media/hero/hero-06-20260604-154709.mp4
+      label: 2026-06-04T15:47:09, 32-54.4 seconds
+  poster: /assets/images/hero/hero-poster-20260601-223350.jpg
+  alt: Drone view over a Southern Cook Islands reef flat and makatea coastline.
+  caption: Southern Cook Islands reef-flat and makatea footage, used here as the opening visual field for HISEAS.
+brand:
+  logo: /assets/images/current-site/01-997266_84ea77a77321454aadee4e00f066d0ae~mv2.jpg
+  nsf_logo: /assets/images/current-site/02-997266_42ade696e3314137a1af6d15ec881c1a~mv2.png
+proposal:
+  overview: /assets/images/proposal/proposal-overview-figure-2.jpg
+  overview_caption: Overview Figure 2 from the HISEAS proposal connects observations with CLIMBER-X, PISM, VILMA, and coupled climate, ice-sheet, solid-Earth, ocean, and land-model components.
+  sea_level_storyline: /assets/images/proposal/hiseas-proposal-logo.jpg
+question:
+  polar_placeholder: /assets/images/cinema/polar-ice-placeholder.svg
+  sea_level: /assets/images/findings/walis-map.png
+  climate: /assets/images/findings/synthetic-summary.png
+  lab_placeholder: /assets/images/cinema/lab-computer-placeholder.svg
+  tabs:
+    - id: ice
+      icon: I
+      label: Polar ice
+      title: Which ice sheets crossed a threshold?
+      text: HISEAS tests Greenland, West Antarctic, East Antarctic, and lingering Laurentide melt histories against Last Interglacial sea-level records.
+      image: /assets/images/cinema/polar-ice-placeholder.svg
+      caption: Calving ice, an ice margin, or a team image in a polar landscape would be a stronger final visual here.
+    - id: sea
+      icon: S
+      label: Past sea level
+      title: Where did local shorelines sit, and when?
+      text: Raised reefs, fossil corals, WALIS observations, flexural corrections, and GIA modeling translate field indicators into global melt constraints.
+      image: /assets/images/cook-field/makatea-person-scale.jpg
+      caption: Makatea and raised reef morphology preserve sea-level markers that need elevation, age, and process context.
+    - id: climate
+      icon: C
+      label: Paleoclimate
+      title: What climate state forced the melt?
+      text: Geochemistry, sediment cores, temperature proxies, iceberg discharge, sea ice, circulation, and vegetation records give the Earth system model a climate target.
+      image: /assets/images/cook-field/geochem-sample-scale.jpg
+      caption: Geochemical observations and proxy compilations connect coastal evidence to ocean and climate forcing.
+    - id: inversion
+      icon: M
+      label: Models
+      title: Which histories survive the inversion?
+      text: CLIMBER-X, PISM, VILMA, sea-level fingerprints, emulators, and Bayesian inversion test many ice histories against many observations.
+      image: /assets/images/proposal/proposal-overview-figure-2.jpg
+      caption: Proposal Figure 2 shows the coupled model and observation architecture behind HISEAS.
+field:
+  aerial: /assets/images/cinema/cook-makatea-aerial.jpg
+  ground: /assets/images/cinema/cook-makatea-ground.jpg
+  filmstrip: /assets/images/cinema/cook-aerial-filmstrip.jpg
+  reef_filmstrip: /assets/images/cinema/cook-reef-filmstrip.jpg
+  collage:
+    - image: /assets/images/cook-field/team-landscape-traverse.jpg
+      label: Field traverse
+      text: People, scale, and landscape together.
+    - image: /assets/images/cook-field/team-reef-flat.jpg
+      label: Reef flat
+      text: Observations at the waterline.
+    - image: /assets/images/cook-field/makatea-overhang-team.jpg
+      label: Makatea
+      text: Raised reef as archive.
+    - image: /assets/images/cook-field/coral-texture.jpg
+      label: Fossil coral
+      text: Paleoclimate and sea-level material.
+    - image: /assets/images/cook-field/team-gps-ridge.jpg
+      label: Survey
+      text: Elevation control in the landscape.
+    - image: /assets/images/cook-field/reef-cliff-blue-sky.jpg
+      label: Coastline
+      text: A shoreline indicator in context.
+team_spotlight:
+  intro: HISEAS is a distributed field, lab, and modeling team. The homepage should make the people visible before the archive branches into papers and notes.
+  people:
+    - name: Jacqueline Austermann
+      role: Lead PI, geodynamics
+      affiliation: Columbia University
+      image: /assets/images/current-site/04-997266_5bfee2b36c31401ba6b8f7fc0924a2f0~mv2.jpg
+    - name: Jerry McManus
+      role: Co-PI, paleoceanography
+      affiliation: Columbia University
+      image: /assets/images/current-site/05-997266_d4066c3f735a4db395c9b595a7cca12e~mv2.png
+    - name: Andy Aschwanden
+      role: Co-PI, ice-sheet modeling
+      affiliation: University of Alaska Fairbanks
+      image: /assets/images/current-site/06-997266_fa5c8d0c2b314227b046323cbc31fece~mv2.png
+    - name: William D'Andrea
+      role: Co-PI, organic geochemistry
+      affiliation: Columbia University
+      image: /assets/images/current-site/07-997266_5c38b409875441f6af8ea7dcc7a602f2~mv2.png
+    - name: Blake Dyer
+      role: Collaborator, sea-level geology
+      affiliation: University of Victoria
+      image: /assets/images/current-site/13-997266_f27043108fbd4848ac6d3678328b85c8~mv2.jpg
+    - name: Oana Dumitru
+      role: Co-PI, geochronology
+      affiliation: University of Florida
+      image: /assets/images/current-site/08-997266_ef195d9e87084f4187d9bdfb06d2910c~mv2.jpg
+outreach:
+  video: /assets/media/cook-islands-news-reel.mp4
+  poster: /assets/images/cinema/cook-islands-news-reel.jpg
+  title: Cook Islands Television News, June 9, 2026
+  text: Mangaia TV covered the HISEAS field team studying sea-level history in makatea and limestone terraces.
+  still: /assets/images/outreach/coverage-1.jpg
+  community: /assets/images/outreach/coverage-2.jpg
+  links:
+    - title: CITV Local News segment
+      href: https://www.facebook.com/watch/?v=943588045390018
+      text: A local television segment follows the team studying makatea and limestone terraces in the Southern Cook Islands.
+    - title: Researchers study makatea to predict future sea level rise
+      href: https://www.cookislandsnews.com/internal/national/environment/outer-islands/researchers-study-makatea-to-predict-future-sea-level-rise/
+      text: Cook Islands News coverage connects the HISEAS field campaign with public discussion of sea-level change and community context.

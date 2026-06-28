@@ -1,0 +1,23 @@
+slug: research-questions
+title: Research Questions
+intro: The NSF proposal organizes HISEAS around three questions that connect local shoreline evidence to ice-sheet physics.
+items:
+  - id: q1
+    question: How did sea level evolve throughout the Last Interglacial?
+    objective: Test whether global mean sea level remained below high-end estimates and whether it was relatively stable or variable across 130-115 ka.
+    hypotheses:
+      - Global mean sea level did not exceed 5 m.
+      - Global mean sea level did not show large variations over the course of the LIG.
+  - id: q2
+    question: How did the different ice sheets contribute to LIG sea-level evolution?
+    objective: Partition melt among Laurentide, Greenland, West Antarctic, and East Antarctic sources using sea-level fingerprints and model-data comparison.
+    hypotheses:
+      - The Laurentide Ice Sheet persisted into the LIG.
+      - Antarctic melt occurred early, including WAIS collapse and possible Wilkes Basin loss.
+      - Greenland contributed less than 2 m, with strongest melt during the middle LIG.
+  - id: q3
+    question: What caused melting of polar ice sheets beyond their modern extent?
+    objective: Test whether LIG melt histories require ice-sheet instability processes or can be explained by Termination II history, climate forcing, boundary conditions, and internal ice-sheet dynamics.
+    hypotheses:
+      - Marine ice cliff instability is not required to explain LIG melt histories.
+      - Excess LIG melt resulted from multiple differences between Termination II and Termination I, not only warmer peak temperatures.

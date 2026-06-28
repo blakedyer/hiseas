@@ -1,0 +1,41 @@
+slug: methods
+title: Methods
+intro: HISEAS connects field observations, paleoclimate archives, coupled models, and statistical inversion into one project workflow.
+steps:
+  - label: Observations
+    title: Sea-level and paleoclimate evidence
+    text: WALIS records, new field observations, fossil corals, sediment cores, sea-surface temperature proxies, iceberg discharge, sea-ice extent, ocean circulation, vegetation, and terrestrial archives constrain the 140-115 ka interval.
+  - label: Compilation
+    title: Structured proxy database and time-slice maps
+    text: HISEAS aims to compile proxy data and metadata, including chronological, analytical, and proxy-calibration uncertainty, then use time-slice maps for model-data comparison.
+  - label: Coupled Modeling
+    title: CLIMBER-X, PISM, and VILMA
+    text: CLIMBER-X supplies atmosphere, ocean, sea ice, and land-surface context; PISM simulates ice-sheet evolution; VILMA couples solid-Earth deformation and sea-level change to the ice histories.
+  - label: Fingerprinting
+    title: Sea-level fingerprints and Bayesian inversion
+    text: Local relative sea-level observations are compared with physically consistent GIA predictions to estimate global mean sea level and distinguish possible ice-sheet melt sources.
+models:
+  - name: CLIMBER-X
+    role: Earth system model
+    description: Simulates global atmosphere, ocean, sea ice, land surface, and carbon-cycle context for glacial-cycle-scale experiments.
+  - name: PISM
+    role: Ice-sheet model
+    description: Simulates ice flow for Northern Hemisphere and Antarctic ice histories, including experiments that test instability-process assumptions.
+  - name: VILMA
+    role: GIA and sea-level model
+    description: Couples solid-Earth deformation and sea-level change to the evolving ice loads.
+  - name: WALIS
+    role: Sea-level observation database
+    description: Provides standardized Last Interglacial shoreline and sea-level indicator records used for screening, scoring, and inversion.
+  - name: Emulator inversion
+    role: Statistical accelerator
+    description: Machine-learning emulators make repeated GIA evaluations feasible inside hierarchical Bayesian inversion.
+glossary:
+  - term: Relative sea level
+    definition: Sea level measured at a place, including ocean height, ice loading, solid-Earth deformation, and local vertical motion.
+  - term: Global mean sea level
+    definition: The globally averaged ocean-volume signal inferred after accounting for spatial fingerprints and Earth response.
+  - term: Indicative meaning
+    definition: The relationship between a geologic indicator and the tide or water-depth range in which it formed.
+  - term: Sea-level fingerprint
+    definition: The spatial pattern of sea-level change caused by a particular ice-sheet melt source and the solid-Earth response.

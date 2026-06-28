@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.dek | default(page.intro if page.intro is string else site.description) }}">
+    <link rel="canonical" href="{{ site.url }}{% if page.slug != 'index' %}/{{ page.slug }}/{% else %}/{% endif %}">
+    <link rel="icon" href="{{ '/favicon.svg' | image_url }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | with_base_path }}">
+    <script src="{{ '/assets/js/site.js' | with_base_path }}" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="{{ '/' | with_base_path }}" aria-label="HISEAS home">
+        <img src="{{ '/assets/images/current-site/01-997266_84ea77a77321454aadee4e00f066d0ae~mv2.jpg' | image_url }}" alt="">
+        <span>
+          <span class="wordmark__main">{{ site.name }}</span>
+          <span class="wordmark__sub">Frontier Research in Earth Sciences</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        {% for item in site.navigation %}
+          <a href="{{ item.href }}" {% if item.href == '/' and page.slug == 'index' or item.href == '/' ~ page.slug ~ '/' %}aria-current="page"{% endif %}>{{ item.label }}</a>
+        {% endfor %}
+      </nav>
+      <a class="header-nsf" href="https://www.nsf.gov/" aria-label="National Science Foundation">
+        <img src="{{ '/assets/images/current-site/02-997266_42ade696e3314137a1af6d15ec881c1a~mv2.png' | image_url }}" alt="">
+      </a>
+    </header>
+
+    <main id="main">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="footer-kicker">HISEAS</p>
+        <p>{{ site.funding }}</p>
+      </div>
+      <img class="footer-nsf" src="{{ '/assets/images/current-site/02-997266_42ade696e3314137a1af6d15ec881c1a~mv2.png' | image_url }}" alt="National Science Foundation logo">
+      <div class="footer-links">
+        {% for item in site.footer_links %}
+          <a href="{{ item.href }}">{{ item.label }}</a>
+        {% endfor %}
+      </div>
+    </footer>
+  </body>
+</html>

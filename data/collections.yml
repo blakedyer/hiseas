@@ -1,0 +1,17 @@
+collections:
+  - title: Stories
+    slug: stories
+    status: Future collection
+    text: Field narratives, project updates, and plain-language explainers can be added here as data records.
+  - title: Photos
+    slug: photos
+    status: Future collection
+    text: Photo essays and site galleries can reuse field-site metadata and image captions.
+  - title: Conference Notes
+    slug: notes
+    status: Future collection
+    text: Meeting notes, abstracts, posters, and presentation links can be published without changing templates.
+  - title: Links
+    slug: links
+    status: Future collection
+    text: Outreach, papers, related databases, and partner resources can be managed as a structured link library.

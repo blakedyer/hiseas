@@ -1,0 +1,416 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav class="chapter-rail" aria-label="Homepage chapters">
+  <a href="#opening" aria-current="true">Opening</a>
+  <a href="#motivation">Motivation</a>
+  <a href="#team">Team</a>
+  <a href="#approach">Approach</a>
+  <a href="#field-sites">Sites</a>
+  <a href="#outreach">Outreach</a>
+  <a href="#publications">Papers</a>
+</nav>
+
+<section class="ocean-hero" id="opening" data-chapter>
+  <video
+    class="ocean-hero__video is-active"
+    muted
+    playsinline
+    preload="auto"
+    poster="{{ media.hero.poster | image_url }}"
+    data-video-loop
+    data-autoplay-buffered
+    data-sources="{{ media.hero.videos | map(attribute='src') | join(',') }}"
+    data-labels="{{ media.hero.videos | map(attribute='label') | join('|') }}"
+    aria-hidden="true"
+  >
+    <source src="{{ media.hero.videos[0].src }}" type="video/mp4">
+  </video>
+  <video
+    class="ocean-hero__video"
+    muted
+    playsinline
+    preload="auto"
+    aria-hidden="true"
+    data-video-standby
+  ></video>
+  <img
+    class="ocean-hero__poster"
+    src="{{ media.hero.poster | image_url }}"
+    alt=""
+    aria-hidden="true"
+    data-hero-poster
+  >
+  <div class="ocean-hero__shade"></div>
+  <div class="ocean-hero__content" data-reveal="hero" data-reveal-group>
+    <h1 aria-label="How much and why did Ice Sheets melt during the Last Interglacial?">
+      <span class="acronym-mark" data-token="H">H</span>ow much and why did
+      <span class="word-lock"><span class="acronym-mark" data-token="I">I</span>ce</span>
+      <span class="word-lock"><span class="acronym-mark" data-token="S">S</span>heets</span>
+      <span class="word-lock">m<span class="acronym-mark" data-token="E">e</span>lt</span> during the
+      <span class="word-lock">L<span class="acronym-mark acronym-mark--pair" data-token="AS">as</span>t</span> Interglacial?
+    </h1>
+    <div class="hero-callouts" aria-label="Proposal themes">
+      <a href="#approach" data-reveal-child>PALEOCLIMATE</a>
+      <a href="#approach" data-reveal-child>SEA LEVEL</a>
+      <a href="#approach" data-reveal-child>ICE SHEETS</a>
+      <a href="#approach" data-reveal-child>EARTH SYSTEMS</a>
+    </div>
+  </div>
+  <div class="hero-controls hero-controls--minimal" data-reveal="control">
+    <button class="media-toggle" type="button" data-video-toggle aria-pressed="false">
+      <span data-video-toggle-icon>Pause</span>
+    </button>
+  </div>
+</section>
+
+<section class="landing-section motivation-section" id="motivation" data-chapter data-climate-story data-climate-active="ice-core" aria-labelledby="motivation-heading">
+  <div class="section-shell motivation-story">
+    <div class="motivation-frame" data-reveal="media">
+      <div class="climate-frame" id="motivation-chart" data-climate-frame aria-live="polite">
+        <div class="climate-frame__surface" aria-hidden="true"></div>
+        <canvas
+          class="climate-frame__canvas"
+          width="1120"
+          height="760"
+          data-climate-canvas
+          aria-label="Animated climate data frame for the motivation section."
+        ></canvas>
+        <div class="climate-info-card">
+          <div>
+            <p class="climate-frame__kicker" data-climate-kicker>150 ka to late Holocene</p>
+            <h3 data-climate-title>Ice Core Record</h3>
+          </div>
+          <div class="climate-frame__metric">
+            <span data-climate-value>190 ppm</span>
+            <span data-climate-unit>CO2</span>
+          </div>
+          <div class="climate-frame__meta">
+            <span data-climate-year>150 ka BP</span>
+            <span data-climate-source>NOAA/NCEI Vostok ice core</span>
+          </div>
+          <div class="climate-gate" aria-label="Select climate vignette">
+            <button class="climate-gate__button is-active" type="button" data-climate-trigger="ice-core" aria-label="Show Ice Core Record" aria-pressed="true">
+              <span class="climate-gate__track" aria-hidden="true">
+                <span data-climate-progress="ice-core"></span>
+              </span>
+            </button>
+            <button class="climate-gate__button" type="button" data-climate-trigger="mauna-loa" aria-label="Show Instrumental Record" aria-pressed="false">
+              <span class="climate-gate__track" aria-hidden="true">
+                <span data-climate-progress="mauna-loa"></span>
+              </span>
+            </button>
+            <button class="climate-gate__button" type="button" data-climate-trigger="projections" aria-label="Show Future Predictions" aria-pressed="false">
+              <span class="climate-gate__track" aria-hidden="true">
+                <span data-climate-progress="projections"></span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="climate-frame__legend" data-climate-legend>
+          <span>Vostok CO2</span>
+        </div>
+      </div>
+      <p class="climate-frame__caption" data-climate-caption>Data: NOAA/NCEI Vostok ice core, Barnola et al.</p>
+    </div>
+
+    <div class="motivation-copy" data-reveal="text" data-reveal-group>
+      <p class="section-label">Motivation</p>
+      <h2 id="motivation-heading">Clues in the past about a warming world</h2>
+      <p>The Last Interglacial was the most recent interval when Greenland and Antarctic ice sheets melted significantly beyond their current state. HISEAS uses that interval to test which melt histories are physically plausible, which mechanisms are required, and how local shoreline records can constrain global ice loss.</p>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section team-section" id="team" data-chapter aria-labelledby="team-heading">
+  {% set focus_group = team.groups[0] %}
+  {% set focus_person = focus_group.people[0] %}
+  <div class="section-shell landing-team" data-team-board>
+    <div class="section-heading section-heading--split" data-reveal="text" data-reveal-group>
+      <div>
+        <p class="section-label">Team</p>
+        <h2 id="team-heading">Meet the HISEAS team</h2>
+      </div>
+      <div class="landing-team__legend" aria-label="Team role legend">
+        <span data-group-style="investigators" data-reveal-child>Investigators</span>
+        <span data-group-style="main-collaborators" data-reveal-child>Collaborators</span>
+        <span data-group-style="research-scientists" data-reveal-child>Research Scientists</span>
+        <span data-group-style="postdocs" data-reveal-child>Postdocs</span>
+        <span data-group-style="students" data-reveal-child>Students</span>
+      </div>
+    </div>
+    <div class="landing-team__stage" data-reveal="media" data-reveal-group>
+      <article class="landing-team__focus" data-team-focus data-group-style="investigators" aria-live="polite">
+        <div class="landing-team__portrait" data-team-focus-media>
+          {% if focus_person.image %}
+            <img src="{{ focus_person.image | image_url }}" alt="{{ focus_person.name }}" style="object-position: {{ focus_person.portrait_position | default('center 38%') }}" data-team-focus-image>
+          {% else %}
+            <span class="landing-team__avatar landing-team__avatar--large" data-team-focus-initials>{{ focus_person.initials }}</span>
+          {% endif %}
+        </div>
+        <div class="landing-team__copy">
+          <p class="section-label" data-team-focus-group>{{ focus_group.name }}</p>
+          <h3 data-team-focus-name>
+            {% if focus_person.url %}
+              <a href="{{ focus_person.url }}">{{ focus_person.name }}</a>
+            {% else %}
+              <span>{{ focus_person.name }}</span>
+            {% endif %}
+          </h3>
+          <p class="landing-team__role" data-team-focus-role>{{ focus_person.role }}</p>
+          <p class="landing-team__affiliation" data-team-focus-affiliation>{{ focus_person.affiliation }}</p>
+          <p class="landing-team__links" data-team-focus-links {% if not focus_person.url %}hidden{% endif %}>
+            {% if focus_person.url %}
+              <a href="{{ focus_person.url }}">Research webpage</a>
+            {% endif %}
+          </p>
+          <p class="landing-team__expertise" data-team-focus-expertise>{{ focus_person.expertise }}</p>
+        </div>
+      </article>
+
+      <div class="landing-team__roster" aria-label="Browse HISEAS team members">
+        <div class="landing-team__people landing-team__people--all" role="listbox" aria-label="Full HISEAS team">
+        {% for group in team.groups %}
+              {% for person in group.people %}
+                {% set is_selected = loop.first and group == team.groups[0] %}
+                <article class="landing-person" data-reveal-child>
+                  <button
+                    class="landing-person__select"
+                    type="button"
+                    role="option"
+                    aria-selected="{{ 'true' if is_selected else 'false' }}"
+                    aria-label="Show {{ person.name }}"
+                    data-group-style="{{ group.name | lower | replace(' ', '-') }}"
+                    data-team-person
+                    data-name="{{ person.name }}"
+                    data-group="{{ group.name }}"
+                    data-role="{{ person.role | default('', true) }}"
+                    data-affiliation="{{ person.affiliation | default('', true) }}"
+                    data-expertise="{{ person.expertise | default('', true) }}"
+                    data-image="{{ person.image | default('', true) | image_url }}"
+                    data-position="{{ person.portrait_position | default('center 38%', true) }}"
+                    data-initials="{{ person.initials }}"
+                    data-url="{{ person.url | default('', true) }}"
+                  >
+                    {% if person.image %}
+                      <img src="{{ person.image | image_url }}" alt="{{ person.name }}" loading="lazy" style="object-position: {{ person.portrait_position | default('center 38%', true) }}">
+                    {% else %}
+                      <span class="landing-team__avatar">{{ person.initials }}</span>
+                    {% endif %}
+                    {% if person.affiliation %}<span>{{ person.affiliation }}</span>{% endif %}
+                  </button>
+                  <h4>
+                    {% if person.url %}
+                      <a href="{{ person.url }}">{{ person.name }}</a>
+                    {% else %}
+                      <span>{{ person.name }}</span>
+                    {% endif %}
+                  </h4>
+                </article>
+              {% endfor %}
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section approach-section" id="approach" data-chapter aria-labelledby="approach-heading">
+  <div class="section-shell">
+    <div class="initiative-board approach-board" data-reveal="media" data-reveal-group data-initiative>
+      <div class="approach-rail">
+        <div class="section-heading approach-heading">
+          <h2 id="approach-heading">Multidisciplinary Approach</h2>
+        </div>
+        <div class="initiative-tabs approach-tabs" role="tablist" aria-label="HISEAS approach lenses">
+        {% set approach_items = [
+          {
+            "label": "Paleoclimate",
+            "icon": "thermometer",
+            "kicker": "140-115 ka proxy synthesis",
+            "text": "Compile structured LIG paleoclimate records, fill targeted gaps with new SST, AMOC, sea-ice, iceberg-discharge, ecosystem, and precipitation-isotope data, then turn those observations into time-slice maps that can score model simulations.",
+            "image": '/assets/images/proposal/paleoclimate-mgca-sst-map.svg' | image_url,
+            "caption": "",
+            "source": "SST site data from Turney et al. (2020), Earth System Science Data",
+            "source_url": "https://doi.org/10.5194/essd-12-3341-2020",
+            "alt": "Natural Earth basemap with published Last Interglacial sea surface temperature records colored as cooler, neutral, or warmer."
+          },
+          {
+            "label": "Sea Level",
+            "icon": "waves",
+            "kicker": "Field observations and fingerprints",
+            "text": "Use WALIS records plus new surveyed and dated fossil-coral sites to turn local shoreline indicators into melt constraints. GIA modeling, sea-level fingerprints, emulators, and Bayesian inversion estimate when and where excess LIG ice volume was lost.",
+            "image": '/assets/images/cook-field/team-landscape-traverse.jpg' | image_url,
+            "caption": "Cook Islands field traverse work provides elevation control and geologic context for Last Interglacial sea-level indicators.",
+            "source": "HISEAS Cook Islands field survey",
+            "source_url": "",
+            "alt": "HISEAS field team traversing a vegetated Cook Islands coastal landscape during survey work."
+          },
+          {
+            "label": "Ice sheet and Earth System modeling",
+            "icon": "hub",
+            "kicker": "CLIMBER-X, PISM, VILMA",
+            "text": "Run probabilistic coupled simulations that link CLIMBER-X climate, PISM ice sheets, VILMA solid-Earth and sea-level response, and observation scoring. Ensembles test which ice histories survive paleoclimate and sea-level constraints.",
+            "image": media.proposal.overview,
+            "caption": "The coupled HISEAS modeling framework.",
+            "source": "",
+            "source_url": "",
+            "alt": "Proposal Figure 2 diagram showing CLIMBER-X, PISM, VILMA, observations, and data-model comparison workflow."
+          }
+        ] %}
+        {% for item in approach_items %}
+        <button
+          type="button"
+          class="initiative-button"
+          role="tab"
+          aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
+          aria-controls="approach-visual"
+          data-tab-image="{{ item.image | image_url }}"
+          data-tab-caption="{{ item.caption }}"
+          data-tab-source="{{ item.source }}"
+          data-tab-source-url="{{ item.source_url }}"
+          data-tab-alt="{{ item.alt }}"
+          data-reveal-child
+        >
+          <span class="initiative-button__icon" aria-hidden="true">
+            {% if item.icon == "thermometer" %}
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M14 14.8V5a4 4 0 0 0-8 0v9.8A5.5 5.5 0 1 0 14 14.8ZM8 5a2 2 0 0 1 4 0v10.8l.5.3a3.5 3.5 0 1 1-5 0l.5-.3V5Zm1 5h2v6.1a2 2 0 1 1-2 0V10Z"/></svg>
+            {% elif item.icon == "public" %}
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 2.3a9.7 9.7 0 1 0 0 19.4 9.7 9.7 0 0 0 0-19.4Zm6.7 8.4h-3.2a14.5 14.5 0 0 0-1.2-5.1 7.3 7.3 0 0 1 4.4 5.1Zm-6.7-6c.7 1 1.4 3 1.6 6h-3.2c.2-3 .9-5 1.6-6Zm-7.5 8c0-.2 0-.4.1-.6h3.8a17 17 0 0 0 0 3.8H4.6a7 7 0 0 1-.1-3.2Zm.8 4.6h3.2c.3 2.1.8 3.8 1.5 5a7.4 7.4 0 0 1-4.7-5Zm3.2-6.6H5.3a7.4 7.4 0 0 1 4.7-5 14.2 14.2 0 0 0-1.5 5Zm3.5 8.6c-.7-1-1.4-3-1.6-6h3.2c-.2 3-.9 5-1.6 6Zm1.9-8.6h-3.8a14.7 14.7 0 0 1 1.9-6 14.7 14.7 0 0 1 1.9 6Zm.4 10.8c.6-1.2 1.1-2.9 1.4-5h3a7.3 7.3 0 0 1-4.4 5Zm1.5-6.4a17.4 17.4 0 0 0 0-3.8h3.6a7 7 0 0 1 0 3.8h-3.6Z"/></svg>
+            {% elif item.icon == "waves" %}
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 6.2h16v2H4v-2Zm.4 5.3c1.6-1.4 3.6-1.4 5.2 0 .8.7 1.7.7 2.5 0 1.6-1.4 3.6-1.4 5.2 0 .8.7 1.7.7 2.5 0l1.3 1.5c-1.6 1.4-3.6 1.4-5.2 0-.8-.7-1.7-.7-2.5 0-1.6 1.4-3.6 1.4-5.2 0-.8-.7-1.7-.7-2.5 0l-1.3-1.5Zm0 5.2c1.6-1.4 3.6-1.4 5.2 0 .8.7 1.7.7 2.5 0 1.6-1.4 3.6-1.4 5.2 0 .8.7 1.7.7 2.5 0l1.3 1.5c-1.6 1.4-3.6 1.4-5.2 0-.8-.7-1.7-.7-2.5 0-1.6 1.4-3.6 1.4-5.2 0-.8-.7-1.7-.7-2.5 0l-1.3-1.5Z"/></svg>
+            {% else %}
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3.2a3 3 0 0 1 1 5.8v2.1l3.4 2.1a3 3 0 1 1-1 1.7L12 12.8 8.6 15a3 3 0 1 1-1-1.7l3.4-2.1V9a3 3 0 0 1 1-5.8Zm0 2a1 1 0 1 0 0 2.1 1 1 0 0 0 0-2.1Zm-5.8 9.9a1 1 0 1 0 0 2.1 1 1 0 0 0 0-2.1Zm11.6 0a1 1 0 1 0 0 2.1 1 1 0 0 0 0-2.1Z"/></svg>
+            {% endif %}
+          </span>
+          <span class="initiative-button__body">
+            <span class="initiative-button__kicker">{{ item.kicker }}</span>
+            <span class="initiative-button__title">{{ item.label }}</span>
+            <span class="initiative-button__text">{{ item.text }}</span>
+          </span>
+        </button>
+      {% endfor %}
+        </div>
+      </div>
+      <figure class="initiative-figure approach-figure" id="approach-visual">
+        <img data-tab-target-image src="{{ approach_items[0].image | image_url }}" alt="{{ approach_items[0].alt }}">
+        <figcaption>
+          <span data-tab-target-caption>{{ approach_items[0].caption }}</span>
+          <a data-tab-target-source href="{{ approach_items[0].source_url }}">{{ approach_items[0].source }}</a>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section field-sites-section" id="field-sites" data-chapter aria-labelledby="field-sites-heading">
+  <div class="section-shell field-sites-showcase" data-reveal="media" data-reveal-group data-field-showcase>
+    <div class="field-sites-copy">
+      <div class="field-sites-tabs" aria-label="Field program status">
+        <span>Surveyed</span>
+        <span>Proposed</span>
+      </div>
+      <p class="section-label">Sea Level</p>
+      <h2 id="field-sites-heading">Field observations and fingerprints</h2>
+      <p>Use WALIS records plus new surveyed and dated fossil-coral sites to turn local shoreline indicators into melt constraints. GIA modeling, sea-level fingerprints, emulators, and Bayesian inversion estimate when and where excess LIG ice volume was lost.</p>
+      <div class="field-sites-controls" aria-label="Field area carousel controls">
+        <button type="button" data-field-prev aria-label="Previous field area">
+          <span aria-hidden="true">Prev</span>
+        </button>
+        <p data-field-counter>1/4</p>
+        <button type="button" data-field-next aria-label="Next field area">
+          <svg class="field-control-progress" viewBox="0 0 100 44" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <path d="M50 2 H78 C89 2 98 11 98 22 C98 33 89 42 78 42 H22 C11 42 2 33 2 22 C2 11 11 2 22 2 H50" pathLength="1"></path>
+          </svg>
+          <span aria-hidden="true">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="field-sites-stage" aria-label="Four HISEAS field areas">
+      {% set site_cards = [
+        field_sites["cases"][0],
+        field_sites["cases"][1],
+        field_sites["cases"][2],
+        field_sites["cases"][3]
+      ] %}
+      <div class="field-sites-track" data-field-track>
+        {% for site in site_cards %}
+          <article
+            class="field-area-card{% if loop.first %} is-active{% endif %}"
+            id="field-area-{{ loop.index }}"
+            data-field-card
+            data-reveal-child
+            aria-label="{{ loop.index }} of {{ site_cards | length }}: {{ site.name }}"
+          >
+            <img src="{{ site.image | image_url }}" alt="{{ site.alt }}" loading="{{ 'eager' if loop.first else 'lazy' }}">
+            <div class="field-area-card__body">
+              <span>{{ site.status }}</span>
+              <h3>{% if loop.index == 1 %}O'ahu and Moloka'i{% elif loop.index == 4 %}Aruba and Curacao{% else %}{{ site.name }}{% endif %}</h3>
+              <p>{{ site.summary }}</p>
+              <a href="{{ '/field-sites/' | with_base_path }}">Read more</a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+      <div class="field-area-dots" role="tablist" aria-label="Select field area">
+        {% for site in site_cards %}
+          <button
+            type="button"
+            role="tab"
+            aria-selected="{{ 'true' if loop.first else 'false' }}"
+            aria-controls="field-area-{{ loop.index }}"
+            data-field-trigger
+          >
+            <span>{{ "%02d" | format(loop.index) }}</span>
+          </button>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section landing-section--wip outreach-chapter outreach-chapter--rich" id="outreach" data-chapter aria-labelledby="outreach-heading">
+  <div class="outreach-chapter__copy" data-reveal="text">
+    <p class="section-label">Outreach</p>
+    <h2 id="outreach-heading">The field campaign is also a public conversation.</h2>
+    <p>{{ media.outreach.text }} HISEAS links public coverage, local field context, and broader-impact work directly into the research story.</p>
+    <div class="coverage-links">
+      {% for item in media.outreach.links %}
+        <a href="{{ item.href }}">
+          <span>{{ item.title }}</span>
+          {{ item.text }}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="outreach-media-stack" data-reveal="media" data-reveal-group>
+    <figure class="media-frame" data-reveal-child>
+      <video controls playsinline poster="{{ media.outreach.still | image_url }}">
+        <source src="{{ media.outreach.video }}" type="video/mp4">
+      </video>
+      <figcaption><span class="status-pill">Media coverage</span>{{ media.outreach.title }}</figcaption>
+    </figure>
+    <img src="{{ media.outreach.community | image_url }}" alt="Community presentation image from Cook Islands media coverage." data-reveal-child>
+  </div>
+</section>
+
+<section class="landing-section landing-section--wip publications-section" id="publications" data-chapter aria-labelledby="publications-heading">
+  <div class="section-shell publications-grid">
+    <div data-reveal="text">
+      <p class="section-label">Publications</p>
+      <h2 id="publications-heading">Published work and emerging HISEAS outputs.</h2>
+      <p>For now, the landing page surfaces the essential paper trail. Dedicated publication pages can return when the archive is large enough to need them.</p>
+    </div>
+    <div class="publication-list" data-reveal="card" data-reveal-group>
+      {% for item in publications["items"] %}
+        <article data-reveal-child>
+          <span>{{ item.year }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.authors }}</p>
+          <a class="text-link" href="{{ item.doi }}">Read DOI</a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

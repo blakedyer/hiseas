@@ -1,0 +1,54 @@
+slug: findings
+title: Findings
+intro: Emerging HISEAS results and manuscript-in-preparation material, shown with explicit draft status and cautious language.
+status_note: These summaries describe active manuscript work and should not be treated as peer-reviewed conclusions until publication.
+highlights:
+  - label: Manuscript in preparation
+    title: Fingerprinting Last Interglacial Melt
+    text: The manuscript combines WALIS sea-level observations with thousands of GIA models in a hierarchical Bayesian inversion accelerated by machine-learning emulators.
+  - label: Working result
+    title: Peak GMSL concentrated near about 5 m
+    text: Draft manuscript text indicates peak LIG global mean sea level between 2.5 m and 7.4 m above present, with posterior density concentrated near about 5 m.
+  - label: Working result
+    title: Mixed Greenland and Antarctic contributions
+    text: Draft manuscript text suggests the spatial fingerprint is better explained by shared Greenland and Antarctic melt than by complete collapse of one ice sheet alone.
+  - label: Data need
+    title: Southern Hemisphere records remain critical
+    text: The manuscript notes that existing data weakly resolves the Antarctic sector split, motivating precise records in regions where WAIS and EAIS fingerprints diverge.
+figures:
+  - key: walis-map
+    title: WALIS Last Interglacial sea-level observations
+    image: /assets/images/findings/walis-map.png
+    alt: Draft manuscript map of WALIS Last Interglacial sea-level observation sites.
+    status: Draft manuscript figure
+    caption: "Global observation coverage frames the inverse problem: local relative sea-level indicators must be translated into ice-sheet histories through GIA."
+  - key: posterior-summary
+    title: Posterior melt-source summary
+    image: /assets/images/findings/posterior-summary.png
+    alt: Draft posterior summary figure for ice-sheet melt source contributions.
+    status: Draft manuscript figure
+    caption: Draft posterior figure for Greenland, Antarctic, and other source contributions. Public copy should remain cautious until the manuscript is finalized.
+  - key: synthetic-summary
+    title: Synthetic recovery tests
+    image: /assets/images/findings/synthetic-summary.png
+    alt: Synthetic experiment summary testing recovery of known ice histories.
+    status: Draft manuscript figure
+    caption: Synthetic tests help separate robust claims, such as peak GMSL and Greenland contribution, from weakly resolved Antarctic sector splits.
+  - key: long-cay
+    title: Long Cay and Bahamas validation figure
+    image: /assets/images/findings/long-cay.png
+    alt: Draft Long Cay figure with field and relative sea-level validation panels.
+    status: Draft manuscript figure
+    caption: Local fits such as Long Cay help test whether posterior histories reproduce independent site-level sea-level structure.
+  - key: seychelles-1
+    title: Seychelles local sea-level check
+    image: /assets/images/findings/seychelles-1.png
+    alt: Draft Seychelles sea-level comparison figure.
+    status: Draft manuscript figure
+    caption: Seychelles records are used as one local validation window into the global fingerprinting problem.
+  - key: seychelles-2
+    title: Seychelles sensitivity view
+    image: /assets/images/findings/seychelles-2.png
+    alt: Second draft Seychelles sea-level comparison figure.
+    status: Draft manuscript figure
+    caption: A second Seychelles draft panel supports comparison of local sea-level structure and inferred histories.

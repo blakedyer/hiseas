@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero page-hero--compact">
+  <p class="eyebrow">Public Science</p>
+  <h1>{{ page.title }}</h1>
+  <p class="dek">{{ page.intro }}</p>
+</section>
+
+<section class="chapter outreach-chapter" aria-labelledby="outreach-media-page">
+  <div class="split-story split-story--reverse">
+    <div class="split-story__copy" data-reveal>
+      <p class="section-label">Media Coverage</p>
+      <h2 id="outreach-media-page">{{ media.outreach.title }}</h2>
+      <p>{{ media.outreach.text }}</p>
+    </div>
+    <figure class="split-story__media media-frame" data-reveal>
+      <video controls muted playsinline poster="{{ media.outreach.poster | image_url }}">
+        <source src="{{ media.outreach.video }}" type="video/mp4">
+      </video>
+      <figcaption><span class="status-pill">Outreach clip</span>Local news coverage is part of the public-facing HISEAS archive.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="atlas-section intro-grid">
+  <div>
+    <p class="section-label">Engagement</p>
+    <h2>Science communication, policy relevance, and workforce development.</h2>
+  </div>
+  <div class="prose">
+    {% for paragraph in page.body %}
+      <p>{{ paragraph }}</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="event-panel" aria-labelledby="events">
+  <p class="section-label">Events</p>
+  <h2 id="events">{{ page.events_title }}</h2>
+  <p>{{ page.events_intro }}</p>
+  <ul class="event-list">
+    {% for event in page.events %}
+      <li>{{ event }}</li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

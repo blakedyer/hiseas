@@ -1,0 +1,20 @@
+slug: field-notes
+title: Field Notes
+intro: Public-facing field dispatches distilled from synthesized field notes, preserving observation, interpretation, and uncertainty.
+dispatches:
+  - title: Cook Islands field atlas, raised reefs and uncertain sea-level indicators
+    status: Derived from synthesized 2026 field notes
+    date_range: May 25 - June 12, 2026
+    location: Atiu, Rarotonga, Mangaia, Mauke, and Mitiaro
+    image: /assets/images/cook-islands/overview-hero.jpg
+    alt: Southern Cook Islands field campaign coastline and reef setting.
+    summary: The Cook Islands campaign follows raised reef surfaces and makatea exposures across multiple islands, using tide gauges, GCPs, drone control, and sample ledgers to decide which observations can become sea-level indicators.
+    observations:
+      - Modern reef-flat microatolls, algal flats, vermetid or worm-tube surfaces, and notches provide analogues for interpreting raised surfaces, but tide and wave setup must be checked before using them as datum references.
+      - Raised reef exposures include large in-situ coral colonies, Tridacna, coral rubble, sand sheets, encruster fabrics, and possible two-layer reef relations.
+      - Several sites require sample-label reconciliation, photo checks, datum ties, and mineralogy or preservation checks before age or sea-level interpretation.
+    objectives:
+      - Tie reef surfaces and samples to local tide-gauge datums and GCP-controlled photogrammetry.
+      - Prioritize unrecrystallized, growth-position corals and clear indicative meaning.
+      - Compare island elevations with volcanic loading and flexure scenarios.
+      - Keep storm boulders, loose rubble, recrystallized makatea, and uncertain Holocene/MIS 5e contacts provisional.

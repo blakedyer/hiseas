@@ -1,0 +1,112 @@
+slug: team
+title: Team
+intro: HISEAS brings together geodynamics, paleoceanography, ice-sheet modeling, organic geochemistry, geochronology, and field sea-level expertise.
+groups:
+  - name: Investigators
+    people:
+      - name: Jacqueline Austermann
+        role: Lead PI - Geodynamics
+        affiliation: Columbia University
+        image: /assets/images/current-site/04-997266_5bfee2b36c31401ba6b8f7fc0924a2f0~mv2.jpg
+        portrait_position: center 34%
+        initials: JA
+        url: https://lamont.columbia.edu/directory/jacqueline-austermann
+        expertise: Leads HISEAS with expertise in geodynamics, glacial isostatic adjustment, sea-level observations, and paleoclimate. Connects shoreline evidence with sea-level fingerprinting to test physically plausible ice-melt histories.
+      - name: Jerry McManus
+        role: Co-PI - Paleoceanography
+        affiliation: Columbia University
+        image: /assets/images/current-site/05-997266_d4066c3f735a4db395c9b595a7cca12e~mv2.png
+        portrait_position: center 36%
+        initials: JM
+        expertise: Brings paleoceanography, paleoclimatology, and geochemistry expertise to the marine archive side of HISEAS. Helps translate sediment-core and ocean records into constraints on Last Interglacial climate and ice-sheet change.
+      - name: Andy Aschwanden
+        role: Co-PI - Ice Sheet Modeling
+        affiliation: University of Alaska Fairbanks
+        image: /assets/images/current-site/07-997266_5c38b409875441f6af8ea7dcc7a602f2~mv2.png
+        portrait_position: center 34%
+        initials: AA
+        expertise: Leads ice-sheet modeling work with expertise in glaciology, data assimilation, and coupled ice and Earth-system simulations. Uses climate and sea-level constraints to evaluate melt scenarios that are dynamically plausible.
+      - name: William D'Andrea
+        role: Co-PI - Organic Geochemistry
+        affiliation: Columbia University
+        image: /assets/images/current-site/06-997266_fa5c8d0c2b314227b046323cbc31fece~mv2.png
+        portrait_position: center 35%
+        initials: WD
+        url: https://www.billydandrea.com/
+        expertise: Contributes paleoclimatology, organic geochemistry, and sedimentology expertise. Links field evidence and proxy records to environmental conditions during the Last Interglacial.
+      - name: Oana Dumitru
+        role: Co-PI - Geochronology
+        affiliation: University of Florida
+        image: /assets/images/current-site/08-997266_ef195d9e87084f4187d9bdfb06d2910c~mv2.jpg
+        portrait_position: center 50%
+        initials: OD
+        expertise: Leads geochronology for coral and carbonate archives, with expertise in paleoclimatology and U-Th dating. Anchors sea-level indicators in time so field observations can be compared with model histories.
+  - name: Main Collaborators
+    people:
+      - name: Torsten Albrecht
+        affiliation: Potsdam Institute for Climate Impact Research
+        image: /assets/images/current-site/09-997266_ca0625dc95894edc9e5cee1f405ee3cd~mv2.jpg
+        portrait_position: center 35%
+        initials: TA
+        expertise: Senior Scientist at PIK and co-developer of PISM. Contributes numerical modeling expertise across ice sheets, solid Earth response, and Earth-system processes.
+      - name: Alessio Rovere
+        affiliation: Universita Ca' Foscari Venezia
+        image: /assets/images/current-site/10-997266_03bcf91fe70f40728ec4a650df4a4cde~mv2.jpg
+        portrait_position: center 31%
+        initials: AR
+        expertise: Creator of the WALIS Last Interglacial sea-level database. Contributes global sea-level observation expertise and regional knowledge for Caribbean field records.
+      - name: Steven Goldstein
+        affiliation: Columbia University
+        image: /assets/images/current-site/12-997266_3c9d79a247fa46948f939ea6c98cf19f~mv2.jpg
+        portrait_position: center 42%
+        initials: SG
+        expertise: Columbia and LDEO geochronology collaborator with a long record of high-precision U-series work on corals and lake sediments. Supports U-Th measurements and cross-lab validation for HISEAS carbonate archives.
+      - name: Brad Linsley
+        affiliation: Columbia University
+        image: /assets/images/current-site/11-997266_a1bb06023de14f9eadc0643e4a46c03e~mv2.png
+        portrait_position: center 36%
+        initials: BL
+        expertise: Lamont Research Professor specializing in stable-isotope and trace-element analysis from corals. Helps turn fossil coral material into paleoclimate data for model and sea-level interpretation.
+      - name: Blake Dyer
+        affiliation: University of Victoria
+        image: /assets/images/current-site/13-997266_f27043108fbd4848ac6d3678328b85c8~mv2.jpg
+        portrait_position: center 31%
+        initials: BD
+        url: https://blakedyer.github.io
+        expertise: University of Victoria sea-level geologist contributing field, sedimentology, and statistical expertise. Works across carbonate field evidence, data analysis, and melt fingerprinting.
+  - name: Research Scientists
+    people:
+      - name: Timothy C. Kenna
+        affiliation: Columbia University
+        initials: TK
+        expertise: Research scientist supporting geochemical and analytical work across HISEAS proxy and field records.
+  - name: Postdocs
+    people:
+      - name: Jannik Martens
+        role: Postdoc (former)
+        initials: JM
+        expertise: Postdoctoral contributor connecting project observations and modeling needs across the HISEAS workflow.
+  - name: Students
+    people:
+      - name: Otillia Steadman
+        affiliation: Columbia University
+        initials: OS
+        expertise: Student contributor to HISEAS field, laboratory, or synthesis work at Columbia University.
+      - name: Emalee Ott
+        affiliation: University of Florida
+        image: /assets/images/current-site/14-997266_fa42f1dc9d27475abebcb53e48d63970~mv2.jpg
+        portrait_position: center 45%
+        initials: EO
+        expertise: Student contributor to HISEAS geochronology and sea-level archive work at the University of Florida.
+      - name: Jonney Mitchell
+        affiliation: University of Alaska
+        initials: JM
+        expertise: Student contributor to HISEAS ice-sheet and model-focused work at the University of Alaska.
+      - name: Anna Chen
+        affiliation: Columbia University
+        initials: AC
+        expertise: Student contributor to HISEAS proxy, field, or synthesis work at Columbia University.
+      - name: Lisa S. Oelkers
+        affiliation: Columbia University
+        initials: LO
+        expertise: Student contributor to HISEAS proxy, field, or synthesis work at Columbia University.

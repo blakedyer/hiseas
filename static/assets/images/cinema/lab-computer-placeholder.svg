@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Lab and computer work visual placeholder</title>
+  <desc id="desc">Placeholder panel noting that a team photograph around screens or samples would be useful.</desc>
+  <rect width="1600" height="1000" fill="oklch(14% 0.034 188)"/>
+  <rect x="130" y="180" width="610" height="420" rx="10" fill="oklch(23% 0.046 190)" stroke="oklch(61% 0.08 178)" stroke-width="3"/>
+  <rect x="860" y="260" width="560" height="340" rx="10" fill="oklch(21% 0.05 190)" stroke="oklch(61% 0.08 178)" stroke-width="3"/>
+  <path d="M190 500 C270 420 360 460 430 380 C510 290 600 330 690 245" fill="none" stroke="oklch(67% 0.14 145)" stroke-width="8"/>
+  <path d="M920 520 L1010 420 L1100 468 L1210 330 L1360 390" fill="none" stroke="oklch(65% 0.145 42)" stroke-width="8"/>
+  <g fill="oklch(87% 0.03 184 / 0.8)">
+    <circle cx="190" cy="500" r="10"/>
+    <circle cx="430" cy="380" r="10"/>
+    <circle cx="690" cy="245" r="10"/>
+    <circle cx="1010" cy="420" r="10"/>
+    <circle cx="1210" cy="330" r="10"/>
+  </g>
+  <text x="110" y="750" fill="oklch(91% 0.026 198)" font-family="Aptos, Segoe UI, sans-serif" font-size="34" font-weight="800">Image needed</text>
+  <text x="110" y="828" fill="oklch(97% 0.01 190)" font-family="Georgia, serif" font-size="68" font-weight="700">Team at screens, samples, or lab benches.</text>
+  <text x="114" y="890" fill="oklch(78% 0.042 192)" font-family="Aptos, Segoe UI, sans-serif" font-size="30">This chapter should show that HISEAS also happens through lab measurements, databases, model runs, and synthesis work.</text>
+</svg>

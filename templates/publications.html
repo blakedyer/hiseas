@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero page-hero--compact">
+  <p class="eyebrow">Research Outputs</p>
+  <h1>{{ page.title }}</h1>
+  <p class="dek">{{ page.intro }}</p>
+</section>
+
+<section class="publication-list" aria-label="Publications">
+  {% for item in page["items"] %}
+    <article class="publication">
+      <div class="publication__meta">
+        <span>{{ item.year }}</span>
+        <span>{{ item.journal }}</span>
+      </div>
+      <div>
+        <h2>{{ item.title }}</h2>
+        <p class="authors">{{ item.authors }}</p>
+        <p>{{ item.volume }}. {{ item.issn }}.</p>
+        <p class="prose">{{ item.summary }}</p>
+        <a class="text-link" href="{{ item.doi }}">DOI: {{ item.doi }}</a>
+      </div>
+    </article>
+  {% endfor %}
+</section>
+{% endblock %}

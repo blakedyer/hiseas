@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero page-hero--compact">
+  <p class="eyebrow">{{ page.status }}</p>
+  <h1>{{ page.title }}</h1>
+  <p class="dek">{{ page.intro }}</p>
+</section>
+
+<section class="synthesis-band">
+  <p class="section-label">Ready for Content</p>
+  <h2>This page is generated from the same data-driven template system.</h2>
+  <p>Add records for {{ page.title | lower }} to the data files and the static build can publish them without restructuring the site.</p>
+</section>
+{% endblock %}

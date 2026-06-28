@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero page-hero--compact">
+  <p class="eyebrow">Manuscript + Analysis</p>
+  <h1>{{ page.title }}</h1>
+  <p class="dek">{{ page.intro }}</p>
+</section>
+
+<section class="chapter findings-preview" aria-labelledby="findings-opening">
+  <div class="findings-preview__copy" data-reveal>
+    <p class="section-label">Evidence Wall</p>
+    <h2 id="findings-opening">Figures, maps, and posterior histories are the visual language here.</h2>
+    <p>{{ page.status_note }}</p>
+  </div>
+  <figure class="findings-preview__figure" data-reveal>
+    <img src="{{ page.figures[1].image | image_url }}" alt="{{ page.figures[1].alt }}">
+    <figcaption><span class="status-pill">{{ page.figures[1].status }}</span>{{ page.figures[1].caption }}</figcaption>
+  </figure>
+</section>
+
+<section class="status-note" aria-label="Findings status">
+  <p><span class="status-pill">Status note</span>{{ page.status_note }}</p>
+</section>
+
+<section class="finding-highlights" aria-labelledby="finding-highlights">
+  <div>
+    <p class="section-label">Working Claims</p>
+    <h2 id="finding-highlights">Evidence is separated from interpretation.</h2>
+  </div>
+  <div class="finding-list">
+    {% for item in page.highlights %}
+      <article class="finding-item">
+        <span class="status-pill">{{ item.label }}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.text }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="figure-atlas" aria-labelledby="figure-atlas">
+  <div class="figure-atlas__header">
+    <p class="section-label">Figure Atlas</p>
+    <h2 id="figure-atlas">Draft manuscript figures as public evidence objects.</h2>
+  </div>
+  <div class="figure-grid">
+    {% for figure in page.figures %}
+      <figure class="figure-card">
+        <img src="{{ figure.image | image_url }}" alt="{{ figure.alt }}">
+        <figcaption>
+          <span class="status-pill">{{ figure.status }}</span>
+          <strong>{{ figure.title }}</strong>
+          {{ figure.caption }}
+        </figcaption>
+      </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

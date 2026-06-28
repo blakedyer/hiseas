@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero split-hero">
+  <div>
+    <p class="eyebrow">Project Workflow</p>
+    <h1>{{ page.title }}</h1>
+    <p class="dek">{{ page.intro }}</p>
+  </div>
+  <figure class="map-panel">
+    <img src="{{ media.question.lab_placeholder | image_url }}" alt="Placeholder for a team photograph showing lab, computer, sample, or modeling work.">
+    <figcaption><span class="status-pill">Image needed</span>A team photograph around screens, samples, or lab benches would strengthen this methods opening.</figcaption>
+  </figure>
+</section>
+
+<section class="methods-layout" aria-labelledby="method-steps">
+  <div>
+    <p class="section-label">Sequence</p>
+    <h2 id="method-steps">From local evidence to global melt histories.</h2>
+  </div>
+  <div class="method-sequence">
+    {% for step in page.steps %}
+      <article class="method-step">
+        <span>{{ "%02d" | format(loop.index) }}</span>
+        <p class="track-item__label">{{ step.label }}</p>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.text }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="model-panel" aria-labelledby="models">
+  <div class="model-panel__intro">
+    <p class="section-label">Models + Data</p>
+    <h2 id="models">The working stack is explicit.</h2>
+  </div>
+  <div class="model-list">
+    {% for model in page.models %}
+      <article class="model-item">
+        <div>
+          <h3>{{ model.name }}</h3>
+          <p class="model-role">{{ model.role }}</p>
+        </div>
+        <p>{{ model.description }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="chapter findings-preview" aria-labelledby="method-evidence">
+  <div class="findings-preview__copy" data-reveal>
+    <p class="section-label">Model Evidence</p>
+    <h2 id="method-evidence">Synthetic tests show where the method is strong, and where it is not.</h2>
+    <p>HISEAS uses model-data comparisons and emulator-assisted inversion to test which melt histories are identifiable from available observations.</p>
+  </div>
+  <figure class="findings-preview__figure" data-reveal>
+    <img src="{{ '/assets/images/findings/synthetic-summary.png' | image_url }}" alt="Synthetic experiment summary from the Last Interglacial sea-level fingerprinting manuscript.">
+    <figcaption><span class="status-pill">Draft manuscript figure</span>Synthetic recovery tests help separate robust claims from weakly resolved Antarctic sector splits.</figcaption>
+  </figure>
+</section>
+
+<section class="glossary-panel" aria-labelledby="glossary">
+  <p class="section-label">Glossary</p>
+  <h2 id="glossary">Terms that keep field and model claims aligned.</h2>
+  <dl class="glossary-list">
+    {% for item in page.glossary %}
+      <div>
+        <dt>{{ item.term }}</dt>
+        <dd>{{ item.definition }}</dd>
+      </div>
+    {% endfor %}
+  </dl>
+</section>
+{% endblock %}

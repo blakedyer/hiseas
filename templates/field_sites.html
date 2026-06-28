@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero split-hero">
+  <div>
+    <p class="eyebrow">Field Atlas</p>
+    <h1>{{ page.title }}</h1>
+    <p class="dek">{{ page.intro }}</p>
+  </div>
+  <figure class="map-panel">
+    <video autoplay muted loop playsinline poster="{{ media.field.aerial | image_url }}" aria-label="Drone footage over Southern Cook Islands makatea and reef coastline.">
+      <source src="{{ media.hero.video }}" type="video/mp4">
+    </video>
+    <figcaption><span class="status-pill">Field media</span>Current and future field-site records can combine structured data, maps, photos, and video-derived stills.</figcaption>
+  </figure>
+</section>
+
+<section class="featured-field" aria-labelledby="featured-field">
+  <figure class="featured-field__image">
+    <img src="{{ page.featured.image | image_url }}" alt="{{ page.featured.alt }}">
+    <figcaption><span class="status-pill">{{ page.featured.status }}</span>{{ page.featured.summary }}</figcaption>
+  </figure>
+  <div class="featured-field__body">
+    <p class="section-label">Flagship Field Case</p>
+    <h2 id="featured-field">{{ page.featured.title }}</h2>
+    <div class="method-tags" aria-label="Field methods">
+      {% for method in page.featured.methods %}
+        <span>{{ method }}</span>
+      {% endfor %}
+    </div>
+    <section aria-labelledby="featured-objectives">
+      <h3 id="featured-objectives">Campaign objectives</h3>
+      <ul class="check-list">
+        {% for item in page.featured.objectives %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+</section>
+
+<section class="chapter field-chapter" aria-labelledby="field-filmstrip">
+  <div class="chapter__intro" data-reveal>
+    <p class="section-label">Media Context</p>
+    <h2 id="field-filmstrip">Field video carries the scale of the makatea landscape.</h2>
+  </div>
+  <figure class="filmstrip" data-reveal>
+    <img src="{{ media.field.reef_filmstrip | image_url }}" alt="Contact sheet from Cook Islands reef-flat drone footage.">
+    <figcaption>Video-derived filmstrip from Southern Cook Islands reef-flat and makatea footage.</figcaption>
+  </figure>
+</section>
+
+<section class="island-panel" aria-labelledby="island-panel">
+  <div>
+    <p class="section-label">Cook Islands</p>
+    <h2 id="island-panel">Island records keep observation and uncertainty together.</h2>
+  </div>
+  <div class="island-list">
+    {% for island in page.featured.islands %}
+      <article class="island-row">
+        <div>
+          <h3>{{ island.name }}</h3>
+          <p class="model-role">{{ island.role }}</p>
+        </div>
+        <p>{{ island.observation }}</p>
+        <p class="published-context">{{ island.published_context }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="flexure-panel" aria-labelledby="flexure-panel">
+  <div>
+    <p class="section-label">Volcanic Loading</p>
+    <h2 id="flexure-panel">Raised-reef elevations are interpreted against flexure scenarios.</h2>
+  </div>
+  <div class="flexure-list">
+    {% for scenario in page.featured.flexure %}
+      <article>
+        <h3>{{ scenario.name }}</h3>
+        <p>{{ scenario.description }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="site-list" aria-labelledby="campaign-index">
+  <div class="site-list__header">
+    <p class="section-label">Campaign Index</p>
+    <h2 id="campaign-index">Surveyed, active, and proposed records.</h2>
+  </div>
+  {% for site in page.cases %}
+      <article class="field-site">
+      <img src="{{ site.image | image_url }}" alt="{{ site.alt }}">
+      <div>
+        <p class="section-label">{{ site.status }}</p>
+        <h2>{{ site.label }}</h2>
+        <p class="site-date">{{ site.location }} - {{ site.date }}</p>
+        <p class="model-role">{{ site.objective }}</p>
+        <p>{{ site.summary }}</p>
+      </div>
+    </article>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero page-hero--compact">
+  <p class="eyebrow">Field Dispatches</p>
+  <h1>{{ page.title }}</h1>
+  <p class="dek">{{ page.intro }}</p>
+</section>
+
+<section class="chapter field-chapter" aria-labelledby="field-notes-media">
+  <div class="split-story">
+    <figure class="split-story__media" data-reveal>
+      <img src="{{ media.field.ground | image_url }}" alt="Cook Islands makatea and vegetation seen from field video.">
+      <figcaption><span class="status-pill">Video-derived still</span>Field notes should eventually pair each dispatch with the exact photos, GCPs, and sample images behind the interpretation.</figcaption>
+    </figure>
+    <div class="split-story__copy" data-reveal>
+      <p class="section-label">Observation First</p>
+      <h2 id="field-notes-media">Dispatches preserve what was seen, what was inferred, and what remains uncertain.</h2>
+    </div>
+  </div>
+</section>
+
+<section class="dispatch-list" aria-label="Field dispatches">
+  {% for dispatch in page.dispatches %}
+    <article class="dispatch">
+      <figure class="dispatch__media">
+        <img src="{{ dispatch.image | image_url }}" alt="{{ dispatch.alt }}">
+        <figcaption><span class="status-pill">{{ dispatch.status }}</span>{{ dispatch.date_range }}. {{ dispatch.location }}.</figcaption>
+      </figure>
+      <div class="dispatch__body">
+        <h2>{{ dispatch.title }}</h2>
+        <p>{{ dispatch.summary }}</p>
+        <div class="dispatch-columns">
+          <section aria-labelledby="observations-{{ loop.index }}">
+            <p class="section-label" id="observations-{{ loop.index }}">Observations</p>
+            <ul>
+              {% for item in dispatch.observations %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+          <section aria-labelledby="objectives-{{ loop.index }}">
+            <p class="section-label" id="objectives-{{ loop.index }}">Next Checks</p>
+            <ul>
+              {% for item in dispatch.objectives %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+</section>
+{% endblock %}

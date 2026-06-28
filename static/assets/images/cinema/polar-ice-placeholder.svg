@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Polar ice visual placeholder</title>
+  <desc id="desc">Placeholder panel noting that calving ice could be a strong photograph for this chapter.</desc>
+  <rect width="1600" height="1000" fill="oklch(16% 0.035 202)"/>
+  <path d="M0 720 C260 630 360 690 560 610 C760 530 900 580 1090 500 C1290 416 1420 430 1600 360 L1600 1000 L0 1000 Z" fill="oklch(88% 0.022 205)"/>
+  <path d="M0 770 C300 690 450 755 650 665 C850 575 1020 640 1220 555 C1400 480 1510 490 1600 450 L1600 1000 L0 1000 Z" fill="oklch(70% 0.05 202)"/>
+  <g fill="none" stroke="oklch(96% 0.01 196 / 0.38)" stroke-width="2">
+    <path d="M110 230 C370 120 540 310 780 200 C970 115 1120 180 1490 110"/>
+    <path d="M80 330 C330 260 510 380 710 300 C980 195 1190 300 1540 210"/>
+    <path d="M180 450 C430 395 620 500 860 410 C1060 335 1220 385 1510 330"/>
+  </g>
+  <text x="96" y="126" fill="oklch(91% 0.026 198)" font-family="Aptos, Segoe UI, sans-serif" font-size="34" font-weight="800">Image needed</text>
+  <text x="96" y="205" fill="oklch(97% 0.01 190)" font-family="Georgia, serif" font-size="76" font-weight="700">Calving ice could be</text>
+  <text x="96" y="292" fill="oklch(97% 0.01 190)" font-family="Georgia, serif" font-size="76" font-weight="700">a strong photo here.</text>
+  <text x="100" y="370" fill="oklch(78% 0.042 192)" font-family="Aptos, Segoe UI, sans-serif" font-size="30">Use this panel for the proposal-scale connection between polar ice-sheet instability, climate forcing, and global sea level.</text>
+</svg>

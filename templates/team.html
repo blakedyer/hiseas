@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set focus_group = page.groups[0] %}
+{% set focus_person = focus_group.people[0] %}
+<section class="page-hero page-hero--compact">
+  <p class="eyebrow">People</p>
+  <h1>{{ page.title }}</h1>
+  <p class="dek">{{ page.intro }}</p>
+</section>
+
+<section class="team-board" data-team-board aria-label="HISEAS team">
+  <article class="team-focus" data-team-focus>
+    <div class="team-focus__media" data-team-focus-media>
+      {% if focus_person.image %}
+        <img src="{{ focus_person.image | image_url }}" alt="{{ focus_person.name }}" data-team-focus-image>
+      {% else %}
+        <span class="team-avatar team-avatar--large" data-team-focus-initials>{{ focus_person.initials }}</span>
+      {% endif %}
+    </div>
+    <div class="team-focus__copy">
+      <p class="eyebrow" data-team-focus-group>{{ focus_group.name }}</p>
+      <h2 data-team-focus-name>
+        {% if focus_person.url %}
+          <a href="{{ focus_person.url }}">{{ focus_person.name }}</a>
+        {% else %}
+          <span>{{ focus_person.name }}</span>
+        {% endif %}
+      </h2>
+      {% if focus_person.role %}<p class="team-focus__role" data-team-focus-role>{{ focus_person.role }}</p>{% endif %}
+      <p data-team-focus-affiliation>{{ focus_person.affiliation }}</p>
+    </div>
+  </article>
+
+  <div class="team-roster" aria-label="Select a team member">
+  {% for group in page.groups %}
+    <section class="team-group" aria-labelledby="group-{{ loop.index }}">
+      <h2 id="group-{{ loop.index }}">{{ group.name }}</h2>
+      <div class="people-grid" role="listbox" aria-label="{{ group.name }}">
+        {% for person in group.people %}
+          {% set is_selected = loop.first and group == page.groups[0] %}
+          <article class="person" data-person-card>
+            <button
+              class="person__select"
+              type="button"
+              role="option"
+              aria-selected="{{ 'true' if is_selected else 'false' }}"
+              aria-label="Show {{ person.name }}"
+              data-team-person
+              data-name="{{ person.name }}"
+              data-group="{{ group.name }}"
+              data-role="{{ person.role | default('', true) }}"
+              data-affiliation="{{ person.affiliation | default('', true) }}"
+              data-image="{{ person.image | default('', true) | image_url }}"
+              data-initials="{{ person.initials }}"
+              data-url="{{ person.url | default('', true) }}"
+            >
+              {% if person.image %}
+                <img class="person__image" src="{{ person.image | image_url }}" alt="{{ person.name }}">
+              {% else %}
+                <span class="team-avatar">{{ person.initials }}</span>
+              {% endif %}
+              {% if person.affiliation %}<span class="person__affiliation">{{ person.affiliation }}</span>{% endif %}
+            </button>
+            <h3>
+              {% if person.url %}
+                <a href="{{ person.url }}">{{ person.name }}</a>
+              {% else %}
+                <span>{{ person.name }}</span>
+              {% endif %}
+            </h3>
+            {% if person.role %}<p class="person__role">{{ person.role }}</p>{% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  {% endfor %}
+  </div>
+</section>
+
+<noscript>
+  <section class="team-sections" aria-label="Team groups">
+    {% for group in page.groups %}
+      <section class="team-group" aria-labelledby="noscript-group-{{ loop.index }}">
+        <h2 id="noscript-group-{{ loop.index }}">{{ group.name }}</h2>
+        <div class="people-grid">
+          {% for person in group.people %}
+            <article class="person">
+              {% if person.image %}
+              <img class="person__image" src="{{ person.image | image_url }}" alt="{{ person.name }}">
+              {% else %}
+                <span class="team-avatar">{{ person.initials }}</span>
+              {% endif %}
+              <h3>
+                {% if person.url %}
+                  <a href="{{ person.url }}">{{ person.name }}</a>
+                {% else %}
+                  <span>{{ person.name }}</span>
+                {% endif %}
+              </h3>
+              {% if person.role %}<p class="person__role">{{ person.role }}</p>{% endif %}
+            {% if person.affiliation %}<p>{{ person.affiliation }}</p>{% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  {% endfor %}
+  </section>
+</noscript>
+{% endblock %}

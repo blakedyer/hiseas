@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HISEAS">
+  <rect width="64" height="64" fill="oklch(96.5% 0.013 178)"/>
+  <path d="M12 13h10v15h20V13h10v38H42V35H22v16H12z" fill="oklch(20% 0.036 190)"/>
+  <path d="M9 56h46" stroke="oklch(60% 0.145 42)" stroke-width="4"/>
+</svg>

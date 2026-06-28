@@ -1,0 +1,52 @@
+slug: index
+title: Research
+eyebrow: Last Interglacial Sea-Level Science
+headline: How much and why did ice sheets melt during the Last Interglacial?
+dek: HISEAS constrains when, how much, and why Greenland and Antarctic ice sheets melted in a past warmer world.
+time_marker: 140-115 ka
+hero:
+  image: /assets/images/cook-islands/overview-hero.jpg
+  alt: Southern Cook Islands carbonate field setting used to study raised reef sea-level indicators.
+  caption: Field evidence, climate archives, and ice-sheet models are combined to test melt histories from 140 to 115 ka.
+intro:
+  - The Last Interglacial (LIG, approx. 130 - 115 ka) is the most recent time in Earth's history when the Greenland and Antarctic ice sheets melted significantly beyond their current present state. This time period therefore provides information on the processes that drive ice sheet melt in a past and future warmer world.
+  - HISEAS aims to constrain when, how much, and why LIG ice sheets melted through investigating the role that external drivers (e.g. ocean and air temperatures), boundary conditions (e.g. bedrock elevation), and internal ice sheet processes played in ice sheet collapse.
+  - This knowledge is key to refining future projections of ice sheet change.
+research_tracks:
+  - label: Model Evolution
+    title: Simulate ice-sheet and sea-level evolution.
+    text: Use the Earth system model CLIMBER-X coupled to the ice sheet model PISM and sea level model VILMA to simulate global ice sheet and sea-level evolution from the penultimate glacial maximum to the end of the LIG (140 - 115 ka).
+  - label: Data-Model Comparison
+    title: Build time-slice maps from climate archives.
+    text: Compile a comprehensive database of terrestrial and sea-surface temperature, iceberg discharge, sea-ice extent, deep ocean circulation, and vegetation classification, then use it to produce time-slice maps for data-model comparison.
+  - label: New Records
+    title: Produce records of climate-ice-sheet interactions.
+    text: Produce new records relevant to understanding climate-ice-sheet interactions, including sea surface temperature, iceberg discharge, and sea-ice extent, using existing deep-sea sediment cores and fossil corals.
+  - label: Sea-Level Fingerprints
+    title: Calibrate model histories with sea-level observations.
+    text: Leverage an existing database and establish new sea-level records from four locations, including two surveyed and sampled sites and two targets for future field campaigns.
+synthesis:
+  title: Testing why Last Interglacial ice sheets evolved.
+  text: A sea-level fingerprint analysis will complement Earth system modeling to provide a parallel estimate of melt contributions during the LIG. Using data-calibrated models, HISEAS will test the relative roles of external drivers, boundary conditions, and internal ice-sheet processes in the evolution of LIG ice sheets.
+feature_links:
+  - title: Methods
+    href: /methods/
+    text: Follow the evidence-to-model workflow from field observations through sea-level fingerprints.
+  - title: Field Sites
+    href: /field-sites/
+    text: Follow Hawai'i, San Andres, the Cook Islands, and proposed Caribbean field campaigns.
+  - title: Findings
+    href: /findings/
+    text: Review manuscript-in-preparation figures and cautious working-result summaries.
+  - title: Field Notes
+    href: /field-notes/
+    text: Read field dispatches distilled from structured notes and sample context.
+  - title: Publications
+    href: /publications/
+    text: Read project publications and emerging results.
+  - title: Team
+    href: /team/
+    text: Meet the investigators, collaborators, researchers, postdocs, and students.
+  - title: Outreach
+    href: /outreach/
+    text: Learn how the project connects field science with public engagement.

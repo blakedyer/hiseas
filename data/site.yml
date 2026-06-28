@@ -1,0 +1,32 @@
+title: HISEAS
+name: HISEAS
+description: How much and why did ice sheets melt during the Last Interglacial?
+url: http://carbonate.seos.uvic.ca:11100/hiseas
+funding: This work is funded by NSF EAR 24-20482 (2024 - 2029)
+navigation:
+  - label: Motivation
+    href: /#motivation
+  - label: Team
+    href: /#team
+  - label: Approach
+    href: /#approach
+  - label: Field Sites
+    href: /#field-sites
+  - label: Outreach
+    href: /#outreach
+  - label: Publications
+    href: /#publications
+future_navigation:
+  - label: Stories
+    href: /stories/
+  - label: Photos
+    href: /photos/
+  - label: Conference Notes
+    href: /notes/
+  - label: Links
+    href: /links/
+footer_links:
+  - label: National Science Foundation
+    href: https://www.nsf.gov/
+  - label: Columbia University
+    href: https://www.columbia.edu/

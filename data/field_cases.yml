@@ -1,0 +1,89 @@
+slug: field-sites
+title: Field Sites
+intro: Field campaigns and surveyed locations provide sea-level observations for model calibration, sea-level fingerprints, and project storytelling.
+map_image: /assets/images/topographic-world-map.png
+map_alt: Topographic world map used as a HISEAS field-site overview.
+featured:
+  title: Cook Islands raised-reef campaign
+  status: Active field project
+  source: /limestone/jupyter/blake/cook_islands_2026
+  image: /assets/images/cook-islands/overview-hero.jpg
+  alt: Southern Cook Islands field guide image showing coastline and field context.
+  summary: The Cook Islands campaign investigates raised reef terraces, makatea, volcanic loading, tide-gauge datums, and U-series sample targets across southern Cook Islands.
+  objectives:
+    - Survey limestone geology on Rarotonga, Mangaia, Atiu, Mauke, and Mitiaro.
+    - Describe and photograph sedimentary features, coral framework, reef-flat surfaces, microatolls, and candidate sea-level indicators.
+    - Collect coral and carbonate samples for geochronology where preservation and growth position support interpretation.
+    - Tie observations to tide gauges, DGPS points, GCPs, drone models, and published reef-terrace context.
+  methods:
+    - tide gauges
+    - DGPS
+    - GCPs
+    - drone photogrammetry
+    - fossil-coral sampling
+    - field notes
+  islands:
+    - name: Rarotonga
+      role: Arrival hub and low-elevation reef-terrace context.
+      observation: Ngatangiia reef-terrace work separates modern notch and Holocene patches from older reef-terrace fabric.
+      published_context: Isolated makatea limestone reaches about 3.5 m and is probably substage 5e.
+    - name: Atiu
+      role: Cave, terrace, coral-framework, and photo-transect work.
+      observation: Field notes document lower reef framework, sand sheets, upper rubble or reef units, South Point reef benches, and modern reef-flat microatolls.
+      published_context: Highest listed substage 5e reef elevation is 12.2 m.
+    - name: Mauke
+      role: Raised-reef transects and layered reef relations.
+      observation: Work at HS116-HS121 documents modern reef-flat analogues, large coral spurs, possible two-layer reef relations, Tridacna, and tide-gauge control.
+      published_context: General substage 5e level is 10.0 m; highest observed is 12.7 m.
+    - name: Mitiaro
+      role: Added survey block with harbor tide gauge and Teunu/Te Rotonui reef-flat stops.
+      observation: Field notes record storm-affected boulders, possible U-series targets, backreef relief, Holocene-versus-MIS-5e uncertainty, and tide-datum follow-up.
+      published_context: Minimum listed substage 5e elevation is 9.8 m.
+    - name: Mangaia
+      role: Final sample and synthesis block.
+      observation: Field notes document harbor flat observations, dense channelized fossil reef at Saragossa, coral samples, GCPs, Tridacna, and higher reef surfaces.
+      published_context: Observed substage 5e is listed at 14.5 m, with possible sea level as much as 20 m above present.
+  flexure:
+    - name: Minimal
+      description: Rarotonga load only.
+    - name: Young Track
+      description: Rarotonga plus young Tama and inferred Pepe/hotspot load.
+    - name: Regional
+      description: Young-track loads plus older southern Cook volcanic edifices.
+cases:
+  - name: Hawai'i
+    label: "Field Site: Hawai'i"
+    location: O'ahu & Moloka'i, Hawai'i
+    date: June 2023
+    image: /assets/images/field-hawaii.jpg
+    alt: Hawai'i field site coastline.
+    status: Surveyed and sampled
+    objective: Add high-quality sea-level data and field context from carbonate settings in the Pacific.
+    summary: Surveyed and sampled field areas in O'ahu and Moloka'i support the project sea-level observation suite.
+  - name: San Andres
+    label: "Field Site: San Andres, Colombia"
+    location: San Andres, Colombia
+    date: March 2023
+    image: /assets/images/field-san-andres.jpg
+    alt: San Andres field site coastline.
+    status: Surveyed and sampled
+    objective: Extend Last Interglacial relative sea-level constraints in the Caribbean and tropical Atlantic context.
+    summary: San Andres provides a tropical field setting for Last Interglacial sea-level evidence and future photo/location expansion.
+  - name: Cook Islands
+    label: "Field Site: Southern Cook Islands"
+    location: Rarotonga, Mangaia, Atiu, Mauke, and Mitiaro
+    date: 2026 campaign
+    image: /assets/images/cook-islands/overview-hero.jpg
+    alt: Southern Cook Islands carbonate field setting.
+    status: Active field synthesis
+    objective: Test raised reef elevations, volcanic loading, flexure, and field indicator quality across multiple makatea islands.
+    summary: Island-by-island raised reef and makatea observations provide a flagship HISEAS field case linking field notes, samples, datums, and flexure scenarios.
+  - name: Aruba and Curacao
+    label: "Field Site: Aruba and Curacao"
+    location: Southern Caribbean
+    date: Proposed campaign
+    image: /assets/images/topographic-world-map.png
+    alt: Project map placeholder for proposed Aruba and Curacao field work.
+    status: Proposed field campaign
+    objective: Extend published LIG sea-level data from Florida, The Bahamas, and Turks and Caicos toward the ABC islands and support field-course knowledge exchange.
+    summary: Proposed Caribbean work adds field observations and broader-impact training opportunities in a region relevant to melt-source fingerprinting.
