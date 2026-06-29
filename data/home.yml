@@ -15,7 +15,7 @@ intro:
 research_tracks:
   - label: Model Evolution
     title: Simulate ice-sheet and sea-level evolution.
-    text: Use the Earth system model CLIMBER-X coupled to the ice sheet model PISM and sea level model VILMA to simulate global ice sheet and sea-level evolution from the penultimate glacial maximum to the end of the LIG (140 - 115 ka).
+    text: Use the Earth system model CLIMBER-X coupled to the ice sheet model PISM and sea-level model VILMA to simulate global ice sheet and sea-level evolution from the penultimate glacial maximum to the end of the LIG (140 - 115 ka).
   - label: Data-Model Comparison
     title: Build time-slice maps from climate archives.
     text: Compile a comprehensive database of terrestrial and sea-surface temperature, iceberg discharge, sea-ice extent, deep ocean circulation, and vegetation classification, then use it to produce time-slice maps for data-model comparison.
