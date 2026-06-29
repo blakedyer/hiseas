@@ -51,15 +51,15 @@ featured:
     - name: Regional
       description: Young-track loads plus older southern Cook volcanic edifices.
 cases:
-  - name: Hawai'i
-    label: "Field Site: Hawai'i"
+  - name: O'ahu and Moloka'i
+    label: "Field Site: O'ahu and Moloka'i"
     location: O'ahu & Moloka'i, Hawai'i
     date: June 2023
-    image: /assets/images/field-hawaii.jpg
-    alt: Hawai'i field site coastline.
+    image: /assets/images/field-oahu-molokai.jpg
+    alt: HISEAS team inspecting Last Interglacial reef limestone at Ka'ena Point.
     status: Surveyed and sampled
     objective: Add high-quality sea-level data and field context from carbonate settings in the Pacific.
-    summary: Surveyed and sampled field areas in O'ahu and Moloka'i support the project sea-level observation suite.
+    summary: New geochronology and elevation data from O'ahu and Moloka'i constrain LIG sea level in the North Pacific.
   - name: San Andres
     label: "Field Site: San Andres, Colombia"
     location: San Andres, Colombia
@@ -68,22 +68,22 @@ cases:
     alt: San Andres field site coastline.
     status: Surveyed and sampled
     objective: Extend Last Interglacial relative sea-level constraints in the Caribbean and tropical Atlantic context.
-    summary: San Andres provides a tropical field setting for Last Interglacial sea-level evidence and future photo/location expansion.
+    summary: Slight uplift in San Andres reveals extensive LIG records.
   - name: Cook Islands
     label: "Field Site: Southern Cook Islands"
     location: Rarotonga, Mangaia, Atiu, Mauke, and Mitiaro
     date: 2026 campaign
-    image: /assets/images/cook-islands/overview-hero.jpg
-    alt: Southern Cook Islands carbonate field setting.
-    status: Active field synthesis
+    image: /assets/images/field-cook-islands-makatea.jpg
+    alt: HISEAS field team surveying makatea along a Southern Cook Islands coastline.
+    status: Surveyed and sampled
     objective: Test raised reef elevations, volcanic loading, flexure, and field indicator quality across multiple makatea islands.
-    summary: Island-by-island raised reef and makatea observations provide a flagship HISEAS field case linking field notes, samples, datums, and flexure scenarios.
-  - name: Aruba and Curacao
-    label: "Field Site: Aruba and Curacao"
+    summary: Limestone reefs (makatea) exposed across four of the southern Cook Islands tell us about local geodynamics and LIG sea level.
+  - name: Aruba and Curaçao
+    label: "Field Site: Aruba and Curaçao"
     location: Southern Caribbean
     date: Proposed campaign
-    image: /assets/images/topographic-world-map.png
-    alt: Project map placeholder for proposed Aruba and Curacao field work.
+    image: /assets/images/field-aruba-curacao-map.jpg
+    alt: Esri satellite image centered on Aruba in the southern Caribbean.
     status: Proposed field campaign
     objective: Extend published LIG sea-level data from Florida, The Bahamas, and Turks and Caicos toward the ABC islands and support field-course knowledge exchange.
-    summary: Proposed Caribbean work adds field observations and broader-impact training opportunities in a region relevant to melt-source fingerprinting.
+    summary: Multiple limestone terraces offer insight into LIG sea level as well as earlier interglacial periods.

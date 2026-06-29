@@ -1499,9 +1499,6 @@ document.querySelectorAll("[data-field-showcase]").forEach(showcase => {
   showcase.addEventListener("focusout", event => {
     if (!showcase.contains(event.relatedTarget)) startAutoAdvance();
   });
-  showcase.addEventListener("mouseenter", stopAutoAdvance);
-  showcase.addEventListener("mouseleave", startAutoAdvance);
-
   selectField(active, { animate: false });
   updateTrackPosition();
   observeMotionInView(showcase, {

@@ -311,13 +311,9 @@
 <section class="landing-section field-sites-section" id="field-sites" data-chapter aria-labelledby="field-sites-heading">
   <div class="section-shell field-sites-showcase" data-reveal="media" data-reveal-group data-field-showcase>
     <div class="field-sites-copy">
-      <div class="field-sites-tabs" aria-label="Field program status">
-        <span>Surveyed</span>
-        <span>Proposed</span>
-      </div>
-      <p class="section-label">Sea Level</p>
-      <h2 id="field-sites-heading">Field observations and fingerprints</h2>
-      <p>Use WALIS records plus new surveyed and dated fossil-coral sites to turn local shoreline indicators into melt constraints. GIA modeling, sea-level fingerprints, emulators, and Bayesian inversion estimate when and where excess LIG ice volume was lost.</p>
+      <p class="section-label">Field Sites</p>
+      <h2 id="field-sites-heading">Observations of past sea-level</h2>
+      <p>HISEAS work uses WALIS (a global database of sea-level records) and new surveyed sites and geochronology to turn local sea level histories into ice sheet melt constraints. GIA modeling, sea-level fingerprints, emulators, and Bayesian inversion determine when and where excess LIG ice volume was lost.</p>
       <div class="field-sites-controls" aria-label="Field area carousel controls">
         <button type="button" data-field-prev aria-label="Previous field area">
           <span aria-hidden="true">Prev</span>
@@ -350,7 +346,7 @@
             <img src="{{ site.image | image_url }}" alt="{{ site.alt }}" loading="{{ 'eager' if loop.first else 'lazy' }}">
             <div class="field-area-card__body">
               <span>{{ site.status }}</span>
-              <h3>{% if loop.index == 1 %}O'ahu and Moloka'i{% elif loop.index == 4 %}Aruba and Curacao{% else %}{{ site.name }}{% endif %}</h3>
+              <h3>{{ site.name }}</h3>
               <p>{{ site.summary }}</p>
             </div>
           </article>
@@ -449,6 +445,12 @@
               </li>
             {% endfor %}
           </ul>
+          {% if outreach.events_note %}
+            <p class="outreach-events__note">
+              <span class="material-symbols-outlined" aria-hidden="true">{{ outreach.events_note_icon | default('more_horiz') }}</span>
+              <span>{{ outreach.events_note }}</span>
+            </p>
+          {% endif %}
         </aside>
       </div>
     </div>

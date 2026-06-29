@@ -6,6 +6,8 @@ body:
   - Additionally, we aim to support the development of a diverse, globally competitive STEM workforce. We work with a focus on decolonizing science.
 events_title: Public Engagement Events
 events_intro: The HISEAS team strives to bolster public engagement with our research through outreach events. Everyone is encouraged to attend.
+events_note_icon: more_horiz
+events_note: Stay tuned, more here soon.
 events:
   - title: Lamont-Doherty Earth Observatory (LDEO) Open House
     type: Open House
@@ -14,21 +16,3 @@ events:
     location: Palisades, New York
     icon: event
     text: Hands-on public programming at LDEO connecting HISEAS field science with broader Earth science.
-  - title: Exhibits at the American Museum of Natural History
-    type: Museum
-    date: Upcoming
-    location: New York, New York
-    icon: account_balance
-    text: Museum exhibits that connect sea-level change, paleoclimate archives, and public science education.
-  - title: Collaborations with the Florida Museum of Natural History
-    type: Museum
-    date: Upcoming
-    location: Gainesville, Florida
-    icon: account_balance
-    text: Museum collaboration supporting research translation, collections context, and public learning.
-  - title: Science for Alaska lecture series
-    type: Lecture
-    date: Upcoming
-    location: Alaska public science series
-    icon: campaign
-    text: Public lecture format connecting Last Interglacial sea-level science to communities tracking environmental change.
