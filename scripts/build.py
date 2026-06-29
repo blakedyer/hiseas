@@ -14,9 +14,9 @@ DATA_DIR = ROOT / "data"
 TEMPLATE_DIR = ROOT / "templates"
 STATIC_DIR = ROOT / "static"
 OUT_DIR = ROOT / "dist"
-# Default production target is http://carbonate.seos.uvic.ca:11100/hiseas.
-# Set HISEAS_BASE_PATH explicitly only when the deployment target changes.
-BASE_PATH = os.getenv("HISEAS_BASE_PATH", "/hiseas").strip()
+# The production site is served from the root of https://www.hiseas.org.
+# Set HISEAS_BASE_PATH only for deployments mounted under a path prefix.
+BASE_PATH = os.getenv("HISEAS_BASE_PATH", "").strip()
 if BASE_PATH and not BASE_PATH.startswith("/"):
     BASE_PATH = f"/{BASE_PATH}"
 BASE_PATH = BASE_PATH.rstrip("/")

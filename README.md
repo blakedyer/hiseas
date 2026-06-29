@@ -4,9 +4,9 @@ Single-page static rebuild of `hiseas.org`, generated from YAML data files and J
 
 ## Production Target
 
-Builds default to `http://carbonate.seos.uvic.ca:11100/hiseas`.
-Do not set `HISEAS_BASE_PATH` for production builds unless the deployment target changes.
-The default production base path is `/hiseas`.
+Builds default to `https://www.hiseas.org`.
+Do not set `HISEAS_BASE_PATH` for production builds unless the deployment target moves under a path prefix.
+The default production base path is empty because the custom domain serves the site from `/`.
 
 ## Local Development
 

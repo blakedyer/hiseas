@@ -31,11 +31,6 @@ jobs:
 
       - name: Build
         run: python scripts/build.py
-        env:
-          HISEAS_BASE_PATH: /hiseas
-
-      - name: Prepare GitHub Pages artifact
-        run: rm -f dist/CNAME
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
