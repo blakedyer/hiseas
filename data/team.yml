@@ -67,6 +67,13 @@ groups:
         portrait_position: center 36%
         initials: BL
         expertise: Lamont Research Professor specializing in stable-isotope and trace-element analysis from corals. Helps turn fossil coral material into paleoclimate data for model and sea-level interpretation.
+      - name: Maureen E. Raymo
+        affiliation: Columbia University
+        image: /assets/images/current-site/maureen-raymo.webp
+        portrait_position: center 36%
+        initials: MR
+        url: https://moraymo.us/
+        expertise: G. Unger Vetlesen Professor of Earth and Climate Science and Co-Founding Dean Emerita of the Columbia Climate School. Brings paleoclimatology and marine geology expertise to HISEAS, especially past sea-level change, ice-sheet stability, and warm-climate analogs.
       - name: Blake Dyer
         affiliation: University of Victoria
         image: /assets/images/current-site/13-997266_f27043108fbd4848ac6d3678328b85c8~mv2.jpg
