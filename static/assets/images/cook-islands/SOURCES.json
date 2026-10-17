@@ -1,11 +1,38 @@
 [
   {
-    "file": "hs103-coastal-setting.jpg",
+    "file": "hs107-coastal-setting.jpg",
+    "caption": "Totiko, Atiu — waves beneath the limestone cliff.",
+    "alt": "Low-oblique drone view at HS107 near Totiko, with turquoise waves spilling across a dark coastal bench below a pale undercut limestone cliff and rough ground with low vegetation.",
     "source_repository": "https://github.com/blakedyer/cook_islands_2026",
-    "source_path": "static/img/trip-report/hs103-coastal-setting.jpg",
-    "source_record": "data/trip_report.yml > site_editorial > HS103 > primary_media",
-    "canonical_report": "https://blakedyer.github.io/cook_islands_2026/trip-report/",
-    "sha256": "8ee358b3f9ea9f098e0caa555d225996cefb3a91524811b5cd5230bacc1401d9",
-    "reuse": "Unmodified copy of accepted campaign report image; no new crop, color edit, or generated content."
+    "source_path": "static/img/trip-report/hs107-coastal-setting.jpg",
+    "source_record": "data/trip_report.yml > site_editorial.HS107",
+    "source_photo": {
+      "photo_uid": "sha256:8d7fa14ec0df0b6deb3411ad37a7275a925480d20bb9409b2121aa216f0d78b8",
+      "filename": "20260528-173059-8d7fa14ec0df-394f63b8ce4f.jpg",
+      "capture_time": "2026-05-28T17:30:59",
+      "camera": "DJI FC6310S",
+      "public_full_url": "https://earth-history-uvic.s3.us-west-004.backblazeb2.com/web/photo-system/v1/full/2026/05/28/20260528-173059-8d7fa14ec0df-394f63b8ce4f.jpg",
+      "source": {
+        "path": "Photo_Library/2026/05/28/23_30_59_0.JPG",
+        "sha256": "6bc2abaa1c21682a0a3125cc338610887743b430e919bd1d680edcd87e1f9938",
+        "width": 5472,
+        "height": 3078,
+        "crop": {
+          "x": 684,
+          "y": 0,
+          "width": 4104,
+          "height": 3078
+        }
+      },
+      "derivative": {
+        "path": "static/img/trip-report/hs107-coastal-setting.jpg",
+        "sha256": "3c16681b75481178e3a0d7228d2151e2f635b77c1a5d53899c1e99735558105c",
+        "width": 1600,
+        "height": 1200,
+        "processing": "Centered 4:3 crop; resized to 1600 × 1200; stripped metadata; progressive JPEG quality 88."
+      }
+    },
+    "sha256": "3c16681b75481178e3a0d7228d2151e2f635b77c1a5d53899c1e99735558105c",
+    "reuse": "Unmodified copy of accepted report image; no new crop, tonal edit or generated content."
   }
 ]

@@ -7,7 +7,6 @@
   <a href="#team">Team</a>
   <a href="#approach">Approach</a>
   <a href="#field-sites">Sites</a>
-  <a href="#cook-islands">Cook Islands</a>
   <a href="#outreach">Outreach</a>
   <a href="#publications">Papers</a>
 </nav>
@@ -314,9 +313,8 @@
     <div class="field-sites-copy">
       <p class="section-label">Field Sites</p>
       <h2 id="field-sites-heading">Past sea level</h2>
-      <p>HISEAS work uses WALIS (a global database of sea-level records) and new surveyed sites and geochronology to turn local sea-level histories into ice sheet melt constraints. GIA modeling, sea-level fingerprints, emulators, and Bayesian inversion determine when and where excess LIG ice volume was lost.</p>
-      <a class="cook-campaign__jump" href="#cook-islands">Explore the Cook Islands campaign</a>
-      <div class="field-sites-controls" aria-label="Field area carousel controls">
+      <p>We survey fossil reefs and date corals to trace past sea levels and ice-sheet change.</p>
+      <div class="field-sites-controls" role="group" aria-label="Field area carousel controls">
         <button type="button" data-field-prev aria-label="Previous field area">
           <span aria-hidden="true">Prev</span>
         </button>
@@ -329,7 +327,7 @@
         </button>
       </div>
     </div>
-    <div class="field-sites-stage" aria-label="Four HISEAS field areas">
+    <div class="field-sites-stage" role="region" aria-label="Four HISEAS field areas">
       {% set site_cards = [
         field_sites["cases"][0],
         field_sites["cases"][1],
@@ -340,7 +338,9 @@
         {% for site in site_cards %}
           <article
             class="field-area-card{% if loop.first %} is-active{% endif %}"
-            id="field-area-{{ loop.index }}"
+            id="{{ 'cook-islands' if site.name == 'Cook Islands' else 'field-area-' ~ loop.index }}"
+            role="tabpanel"
+            aria-labelledby="field-tab-{{ loop.index }}"
             data-field-card
             data-reveal-child
             aria-label="{{ loop.index }} of {{ site_cards | length }}: {{ site.name }}"
@@ -350,6 +350,7 @@
               <span>{{ site.status }}</span>
               <h3>{{ site.name }}</h3>
               <p>{{ site.summary }}</p>
+              {% if site.url %}<a href="{{ site.url }}">{{ site.link_label }}</a>{% endif %}
             </div>
           </article>
         {% endfor %}
@@ -360,7 +361,9 @@
             type="button"
             role="tab"
             aria-selected="{{ 'true' if loop.first else 'false' }}"
-            aria-controls="field-area-{{ loop.index }}"
+            id="field-tab-{{ loop.index }}"
+            aria-label="{{ site.name }}"
+            aria-controls="{{ 'cook-islands' if site.name == 'Cook Islands' else 'field-area-' ~ loop.index }}"
             data-field-trigger
           >
             <span>{{ "%02d" | format(loop.index) }}</span>
@@ -370,8 +373,6 @@
     </div>
   </div>
 </section>
-
-{% include "_cook_campaign.html" %}
 
 <section class="landing-section outreach-chapter outreach-chapter--rich" id="outreach" data-chapter aria-labelledby="outreach-heading">
   <div class="outreach-scene">

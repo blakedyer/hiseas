@@ -1271,7 +1271,7 @@ document.querySelectorAll("[data-field-showcase]").forEach(showcase => {
   };
 
   const startAutoAdvance = () => {
-    if (timer || !isShowcaseVisible || !next || prefersReducedMotion()) return;
+    if (timer || !isShowcaseVisible || !next || prefersReducedMotion() || showcase.matches(":focus-within, :hover")) return;
     showcase.classList.add("is-cycling");
     next.classList.remove("is-advancing");
     next.offsetHeight;
@@ -1377,6 +1377,8 @@ document.querySelectorAll("[data-field-showcase]").forEach(showcase => {
       const isLeaving = cardIndex >= leavingFrom && cardIndex < leavingTo;
       const isBefore = !deferBefore && cardIndex < railIndex;
       card.classList.toggle("is-active", isActive);
+      card.inert = !isActive || card.hasAttribute("data-field-clone");
+      card.setAttribute("aria-hidden", card.inert ? "true" : "false");
       card.classList.toggle("is-leaving", isLeaving);
       card.classList.toggle("is-before", isBefore);
 
@@ -1410,6 +1412,7 @@ document.querySelectorAll("[data-field-showcase]").forEach(showcase => {
     triggers.forEach((trigger, triggerIndex) => {
       const isActive = triggerIndex === logicalActive;
       trigger.setAttribute("aria-selected", isActive ? "true" : "false");
+      trigger.tabIndex = isActive ? 0 : -1;
       if (isActive) {
         trigger.style.animation = "none";
         trigger.offsetHeight;
@@ -1477,6 +1480,29 @@ document.querySelectorAll("[data-field-showcase]").forEach(showcase => {
     });
   });
 
+  triggers.forEach((trigger, index) => {
+    trigger.addEventListener("keydown", event => {
+      let target;
+      if (event.key === "ArrowRight") target = (index + 1) % originalCount;
+      else if (event.key === "ArrowLeft") target = (index - 1 + originalCount) % originalCount;
+      else if (event.key === "Home") target = 0;
+      else if (event.key === "End") target = originalCount - 1;
+      else return;
+      event.preventDefault();
+      stopAutoAdvance();
+      selectField(target, { animate: false });
+      triggers[target].focus();
+    });
+  });
+
+  const selectHashField = () => {
+    const index = originalCards.findIndex(card => `#${card.id}` === window.location.hash);
+    if (index >= 0) selectField(index, { animate: false });
+  };
+  window.addEventListener("hashchange", selectHashField);
+  showcase.addEventListener("mouseenter", stopAutoAdvance);
+  showcase.addEventListener("mouseleave", startAutoAdvance);
+
   previous?.addEventListener("click", () => {
     stopAutoAdvance();
     selectPreviousField();
@@ -1500,6 +1526,7 @@ document.querySelectorAll("[data-field-showcase]").forEach(showcase => {
     if (!showcase.contains(event.relatedTarget)) startAutoAdvance();
   });
   selectField(active, { animate: false });
+  selectHashField();
   updateTrackPosition();
   observeMotionInView(showcase, {
     threshold: 0.18,

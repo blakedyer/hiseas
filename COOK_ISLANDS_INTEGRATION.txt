@@ -1,42 +1,29 @@
-Cook Islands campaign integration
+Cook Islands integration — simplified review, 17 October 2026
 
-Purpose and editing
-The homepage campaign connects HISEAS's Last Interglacial questions to the
-2026 field record. Edit data/field_cases.yml > campaign for copy and links;
-templates/_cook_campaign.html holds the layout. The section appears between
-Field Sites and Outreach, with primary/chapter navigation and a Field Sites link.
-The shared anchor helper now accounts for the sticky header's full bottom edge.
-
-Canonical routes
+The connection lives in the existing Field Sites carousel. There is no separate
+campaign section or navigation item. Edit the Cook Islands entry in
+ data/field_cases.yml > cases; home.html renders its optional url/link_label.
+The one-sentence introduction and image lead to the canonical field atlas:
 https://blakedyer.github.io/cook_islands_2026/
-https://blakedyer.github.io/cook_islands_2026/trip-report/
-https://blakedyer.github.io/cook_islands_2026/sites/
-https://blakedyer.github.io/cook_islands_2026/tidal-datums/
 
-The atlas owns field data, counts, site narratives, evolving interpretations and
-all tour assets. Keep those there. This integration states observations and
-research questions, not a final sea-level reconstruction. Revisit the status
-language only when the campaign report and analyses support it.
-Image provenance: static/assets/images/cook-islands/SOURCES.json.
+The Totiko (HS107), Atiu photograph replaces the weaker Oravaru feature image.
+Its pale cliff, breaking waves and deep water read clearly at carousel scale.
+static/assets/images/cook-islands/SOURCES.json records source metadata, caption,
+original accepted derivative and SHA256. The image is an unmodified copy.
+The old campaign template, CSS and Oravaru copy were removed.
 
-Build and review
-python3 scripts/build.py
-python3 -m http.server 8121 --bind 127.0.0.1 --directory dist
-Open http://127.0.0.1:8121/#cook-islands
-Optional subpath build: HISEAS_BASE_PATH=/hiseas python3 scripts/build.py
-Production uses no HISEAS_BASE_PATH. static/CNAME remains www.hiseas.org.
+The existing #cook-islands review link selects the Cook Islands carousel card.
+Previous/Next controls work by keyboard; mobile dots support arrow/Home/End keys.
+Offscreen slides and loop clones are inert. Cycling pauses on focus or hover;
+reduced-motion users retain the existing non-automatic behavior.
+The earlier sticky-header anchor correction is retained.
 
-Deployment, only after approval
-Review and merge the integration branch into master through the existing Git
-workflow. A push to master/main triggers .github/workflows/pages.yml (or the
-existing workflow filename): Python builds dist and GitHub Pages publishes it.
-No deployment or domain configuration change is needed. Check the campaign
-anchor, image and four canonical links on https://www.hiseas.org/ afterward.
-No push or deployment was performed for this task.
+Build: python3 scripts/build.py
+Subpath review: HISEAS_BASE_PATH=/reviews/cook-islands-integration-20261017/hiseas
+Production builds use no HISEAS_BASE_PATH. CNAME and deployment settings are unchanged.
+Review: http://carbonate.seos.uvic.ca:11100/reviews/cook-islands-integration-20261017/hiseas/#cook-islands
 
-Evidence and isolation
-Tested root and /hiseas builds; Chromium at 1440, 1024, 390 and 320 pixels;
-keyboard skip/menu/anchor navigation; no-JS content; image/local link checks;
-axe WCAG 2.1 A/AA on the new section. Review evidence lives beside the worktree
-in ../review and in the Library review bundle. Existing source checkout and
-Cook Islands source/tour assets were not edited.
+After approval, merge this isolated branch through the usual Git workflow and
+push to master/main to trigger the existing Pages build. No push was performed.
+Do not copy the Apache review build into production; rebuild with an empty base path.
+Shared source checkouts, canonical field data and tour assets remain untouched.
