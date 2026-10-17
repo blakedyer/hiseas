@@ -1,0 +1,11 @@
+[
+  {
+    "file": "hs103-coastal-setting.jpg",
+    "source_repository": "https://github.com/blakedyer/cook_islands_2026",
+    "source_path": "static/img/trip-report/hs103-coastal-setting.jpg",
+    "source_record": "data/trip_report.yml > site_editorial > HS103 > primary_media",
+    "canonical_report": "https://blakedyer.github.io/cook_islands_2026/trip-report/",
+    "sha256": "8ee358b3f9ea9f098e0caa555d225996cefb3a91524811b5cd5230bacc1401d9",
+    "reuse": "Unmodified copy of accepted campaign report image; no new crop, color edit, or generated content."
+  }
+]

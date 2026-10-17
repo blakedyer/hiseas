@@ -1,0 +1,42 @@
+Cook Islands campaign integration
+
+Purpose and editing
+The homepage campaign connects HISEAS's Last Interglacial questions to the
+2026 field record. Edit data/field_cases.yml > campaign for copy and links;
+templates/_cook_campaign.html holds the layout. The section appears between
+Field Sites and Outreach, with primary/chapter navigation and a Field Sites link.
+The shared anchor helper now accounts for the sticky header's full bottom edge.
+
+Canonical routes
+https://blakedyer.github.io/cook_islands_2026/
+https://blakedyer.github.io/cook_islands_2026/trip-report/
+https://blakedyer.github.io/cook_islands_2026/sites/
+https://blakedyer.github.io/cook_islands_2026/tidal-datums/
+
+The atlas owns field data, counts, site narratives, evolving interpretations and
+all tour assets. Keep those there. This integration states observations and
+research questions, not a final sea-level reconstruction. Revisit the status
+language only when the campaign report and analyses support it.
+Image provenance: static/assets/images/cook-islands/SOURCES.json.
+
+Build and review
+python3 scripts/build.py
+python3 -m http.server 8121 --bind 127.0.0.1 --directory dist
+Open http://127.0.0.1:8121/#cook-islands
+Optional subpath build: HISEAS_BASE_PATH=/hiseas python3 scripts/build.py
+Production uses no HISEAS_BASE_PATH. static/CNAME remains www.hiseas.org.
+
+Deployment, only after approval
+Review and merge the integration branch into master through the existing Git
+workflow. A push to master/main triggers .github/workflows/pages.yml (or the
+existing workflow filename): Python builds dist and GitHub Pages publishes it.
+No deployment or domain configuration change is needed. Check the campaign
+anchor, image and four canonical links on https://www.hiseas.org/ afterward.
+No push or deployment was performed for this task.
+
+Evidence and isolation
+Tested root and /hiseas builds; Chromium at 1440, 1024, 390 and 320 pixels;
+keyboard skip/menu/anchor navigation; no-JS content; image/local link checks;
+axe WCAG 2.1 A/AA on the new section. Review evidence lives beside the worktree
+in ../review and in the Library review bundle. Existing source checkout and
+Cook Islands source/tour assets were not edited.

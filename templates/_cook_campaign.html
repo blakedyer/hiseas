@@ -1,0 +1,30 @@
+{% set campaign = field_sites.campaign %}
+<section class="landing-section cook-campaign" id="cook-islands" data-chapter aria-labelledby="cook-heading">
+  <div class="section-shell">
+    <div class="cook-campaign__heading">
+      <h2 id="cook-heading">{{ campaign.title }}</h2>
+      <p>{{ campaign.season }}</p>
+    </div>
+    <div class="cook-campaign__feature">
+      <figure class="cook-campaign__figure">
+        <img src="{{ campaign.image | image_url }}" alt="{{ campaign.alt }}" width="1600" height="1200" loading="lazy">
+        <figcaption>{{ campaign.caption }}</figcaption>
+      </figure>
+      <div class="cook-campaign__copy">
+        <h3>{{ campaign.question }}</h3>
+        <p>{{ campaign.summary }}</p>
+        <p>{{ campaign.interpretation }}</p>
+        <a class="cook-campaign__atlas" href="{{ campaign.atlas_url }}">Open the Cook Islands field atlas</a>
+      </div>
+    </div>
+    <nav class="cook-campaign__routes" aria-label="Explore the Cook Islands field record">
+      {% for route in campaign.routes %}
+      <a href="{{ route.href }}">
+        <span class="cook-campaign__route-title">{{ route.title }}</span>
+        <span>{{ route.text }}</span>
+      </a>
+      {% endfor %}
+    </nav>
+    <p class="cook-campaign__status"><strong>{{ campaign.status }}.</strong> {{ campaign.status_note }}</p>
+  </div>
+</section>

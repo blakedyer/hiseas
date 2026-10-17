@@ -73,7 +73,7 @@ const scrollToHashTarget = () => {
   const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
   if (!target) return;
   const header = document.querySelector(".site-header");
-  const headerOffset = header ? header.getBoundingClientRect().top + 4 : 0;
+  const headerOffset = header ? header.getBoundingClientRect().bottom + 16 : 0;
   const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset;
   window.scrollTo({ top: Math.max(0, targetTop) });
 

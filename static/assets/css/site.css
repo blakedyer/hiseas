@@ -5342,3 +5342,32 @@ figcaption .status-pill {
     animation: none;
   }
 }
+
+/* Cook Islands: a permanent entrance to the canonical campaign atlas. */
+.cook-campaign { background: var(--paper); color: var(--ink); }
+.cook-campaign__heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem 2rem; margin-bottom: 2rem; }
+.cook-campaign__heading h2 { font-size: clamp(2.5rem, 5vw, 4.5rem); margin: 0; }
+.cook-campaign__heading p { color: var(--ink-soft); margin: 0; }
+.cook-campaign__feature { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+.cook-campaign__figure { margin: 0; }
+.cook-campaign__figure img { width: 100%; height: auto; border-radius: 12px; }
+.cook-campaign__figure figcaption { color: var(--ink-soft); font-size: .88rem; line-height: 1.5; margin-top: .85rem; max-width: 62ch; }
+.cook-campaign__copy h3 { font-family: Georgia, serif; font-size: clamp(1.8rem, 2.7vw, 2.75rem); line-height: 1.12; margin-bottom: 1.25rem; }
+.cook-campaign__copy p { max-width: 65ch; }
+.cook-campaign__atlas { background: var(--ink); color: var(--paper); display: inline-flex; align-items: center; min-height: 48px; padding: .7rem 1.1rem; border-radius: 8px; font-weight: 700; text-decoration: none; }
+.cook-campaign__atlas:hover { background: var(--ink-soft); color: var(--paper); }
+.cook-campaign__jump { color: var(--ink); font-weight: 750; text-underline-offset: .25em; width: fit-content; padding-block: .5rem; }
+.cook-campaign__routes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 2.5rem; border-top: 1px solid var(--ink-soft); }
+.cook-campaign__routes a { display: flex; flex-direction: column; gap: .65rem; padding-block: 1.4rem; text-decoration: none; font-size: .96rem; line-height: 1.55; }
+.cook-campaign__route-title { font-size: 1.15rem; font-weight: 750; text-decoration: underline; text-underline-offset: .2em; }
+.cook-campaign__routes a:hover .cook-campaign__route-title { text-decoration-thickness: 2px; }
+.cook-campaign__status { border-top: 1px solid var(--line); margin: .5rem 0 0; padding-top: 1.3rem; color: var(--ink-soft); font-size: .9rem; max-width: 100ch; }
+.cook-campaign a:focus-visible, .cook-campaign__jump:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
+@media (max-width: 800px) {
+  .cook-campaign__heading { display: block; }
+  .cook-campaign__heading p { margin-top: .75rem; }
+  .cook-campaign__feature { grid-template-columns: 1fr; }
+  .cook-campaign__routes { grid-template-columns: 1fr; gap: 0; }
+  .cook-campaign__routes a + a { border-top: 1px solid var(--line); }
+  .cook-campaign__copy h3 { max-width: 24ch; }
+}

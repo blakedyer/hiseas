@@ -87,3 +87,38 @@ cases:
     status: Proposed field campaign
     objective: Extend published LIG sea-level data from Florida, The Bahamas, and Turks and Caicos toward the ABC islands and support field-course knowledge exchange.
     summary: Multiple limestone terraces offer insight into LIG sea level as well as earlier interglacial periods.
+
+# The atlas owns the evolving field record. Keep these stable entry points;
+# do not copy sample totals, preliminary ages, or tour assets into this site.
+campaign:
+  title: Cook Islands 2026
+  question: What can raised reefs tell us about a warmer world?
+  season: May–June 2026 field campaign
+  image: /assets/images/cook-islands/hs103-coastal-setting.jpg
+  alt: Oblique drone view of limestone, a pocket beach and shallow reef flat at Oravaru, Atiu, with a fieldworker and red survey tripod.
+  caption: Oravaru (HS103), Atiu. Coastal limestone and the living reef flat place fossil-reef observations in context.
+  summary: >-
+    Across Rarotonga, Atiu, Mangaia, Mauke and Mitiaro, the team documented
+    living and raised reefs, surveyed elevations and collected carbonate
+    samples. These observations help HISEAS test past sea-level histories
+    and the ice-sheet changes that could explain them.
+  interpretation: >-
+    A raised reef's height reflects both past relative sea level and subsequent
+    land motion. Coral growth position, age, preservation and the local height
+    reference must be evaluated before comparing the record with models.
+  status: Initial field report · Interpretation in progress
+  status_note: >-
+    The field record is available now. Sample screening, dating and geodynamic
+    interpretation are continuing; the campaign has not yet established a final
+    sea-level history.
+  atlas_url: https://blakedyer.github.io/cook_islands_2026/
+  routes:
+    - title: Read the field report
+      text: Follow the island-by-island observations, community connections and next research questions.
+      href: https://blakedyer.github.io/cook_islands_2026/trip-report/
+    - title: Explore the survey sites
+      text: Examine the mapped field record, photographs and site context in the evolving atlas.
+      href: https://blakedyer.github.io/cook_islands_2026/sites/
+    - title: Understand the height control
+      text: See how tide-gauge records and GPS observations connect to local elevation references.
+      href: https://blakedyer.github.io/cook_islands_2026/tidal-datums/
