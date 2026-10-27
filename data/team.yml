@@ -109,10 +109,14 @@ groups:
         affiliation: University of Alaska
         initials: JM
         expertise: Student contributor to HISEAS ice-sheet and model-focused work at the University of Alaska.
-      - name: Anna Chen
-        affiliation: Columbia University
+      - name: Anna (Yīyǔ) Chén
+        role: Undergraduate Researcher
+        affiliation: Columbia University, Class of 2027
+        image: /assets/images/current-site/anna-chen.jpg
+        portrait_position: center 38%
         initials: AC
-        expertise: Student contributor to HISEAS proxy, field, or synthesis work at Columbia University.
+        url: https://annachen04.github.io/
+        expertise: Compiles, reconstructs, and animates sea-surface temperature data for the Last Interglacial using proxies from deep-ocean sediment cores.
       - name: Lisa S. Oelkers
         affiliation: Columbia University
         image: /assets/images/current-site/lisa-oelkers.webp
